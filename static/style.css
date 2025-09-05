@@ -1,7 +1,126 @@
-*, html{
-    user-select: none;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    color: red;
+*,html{
+  scroll-behavior: smooth;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+  transition: all 0.5s ease-in-out;
+}
+
+:root{
+  --maize: #F5D042;
+  --oxford-blue: #0a174e;
+}
+
+
+body{
+  background: var(--oxford-blue);
+  color: var(--maize);
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  position: relative;
+}
+header div h3{
+  color: white;
+  text-transform: capitalize;
+  font-variant: small-caps;
+  background: linear-gradient(to right, var(--maize), var(--oxford-blue),var(--maize), var(--oxford-blue));
+  background: wheat;
+  background-clip: text;
+  color: transparent;
+}
+header ul{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+}
+header ul.open{
+  opacity: 1;
+  pointer-events: all;
+}
+header ul li{
+  position: relative;
+}
+header ul li::after{
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--maize);
+  content: "";
+  transition: width 0.3s ease-in-out;
+}
+header ul li:hover::after{
+  width: 100%;
+}
+header ul li:hover a{
+  color: var(--maize);
+}
+header ul li a{
+  text-decoration: none;
+  color: wheat;
+  font-variant: small-caps;
+}
+header nav{
+  cursor: pointer;
+  display: none;
+}
+header nav:hover div{
+  background: var(--maize);
+}
+header nav div{
+  height: 2px;
+  width: 25px;
+  margin: 5px;
+  background: wheat;
+  border-radius: 10px;
+}
+header nav.open div:first-child{
+  transform: translateY(5px) rotate(40deg);
+}
+header nav.open div:nth-child(2){
+  opacity: 0;
+}
+header nav.open div:last-child{
+  transform: translateY(-9px) rotate(-40deg);
+}
+
+main section:first-child{
+  height: 100vh;
+  width: 100%;
+  background-image: url(/static/images/background_image.gif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: -100px;
+}
+
+@media screen and (max-width: 850px) {
+  header ul{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    display: block;
+    backdrop-filter: blur(20px) brightness(50%);
+    opacity: 0;
+    pointer-events: none;
+  }  
+  header ul li{
+    margin: 20px auto;
+    text-align: center;
+    width: fit-content;
+  }
+  header nav{
+    display: block;
+  }
 }

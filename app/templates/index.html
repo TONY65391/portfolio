@@ -4,108 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Portfolio | Umofia Anthony Inemesit | TonDev</title>
+
+    <link rel="icon" href="/static/images/feem_1d2ffcacc8829_IMG-20250903-WA0121.jpg">
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>KingTony | Web Developer | Virtual Assistant</title>
 </head>
 <body>
     <header>
-        <nav class="nav">
-        <h1 class="logo">Umofia Anthony Inemesit</h1>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <div>
+            <h3>
+                <i class="fa-solid fa-person"></i>
+                Umofia Anthony Inemesit
+            </h3>
+        </div>
+
+        <ul>
+            <li><a href="#home">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a></li>
+
+            <li><a href="#about">
+                <i class="fa-solid fa-address-card"></i>
+                About
+            </a></li>
+
+            <li><a href="#projects">
+                <i class="fa-solid fa-diagram-project"></i>
+                Projects
+            </a></li>
+
+            <li><a href="#contact">
+                <i class="fa-solid fa-id-card"></i>
+                Contact
+            </a></li>
+
+            <li><a href="#hire-me">
+                <i class="fa-solid fa-business-time"></i>
+                Hire Me
+            </a></li>
         </ul>
-        <button class="hamburger" id="hamburger">☰</button>
+
+        <nav class="">
+            <div></div>
+            <div></div>
+            <div></div>
         </nav>
     </header>
-
-    <!-- Hero -->
-    <section id="home" class="hero fade-in">
-        <div class="hero-content">
-        <h2>Hi, I'm <span class="highlight">Umofia Anthony Inemesit</span></h2>
-        <p class="tagline">Website Developer | Virtual Assistant</p>
-        <a href="#contact" class="btn primary">Hire Me</a>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section fade-in">
-        <h2>About Me</h2>
-        <p>
-        I am a passionate <strong>Website Developer</strong> and experienced <strong>Virtual Assistant</strong> dedicated to helping individuals and businesses establish a strong online presence and streamline their workflow. I specialize in creating responsive websites and providing top-notch virtual support services.
-        </p>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="section fade-in">
-        <h2>Services</h2>
-        <div class="services">
-        <div class="card">
-            <h3>Website Development</h3>
-            <p>Designing and building responsive, user-friendly websites tailored to your business needs.</p>
-        </div>
-        <div class="card">
-            <h3>Virtual Assistance</h3>
-            <p>Providing reliable support in administration, scheduling, research, and client communication.</p>
-        </div>
-        </div>
-    </section>
-
-    <!-- Portfolio -->
-    <section id="portfolio" class="section fade-in">
-        <h2>Portfolio</h2>
-        <div class="portfolio-grid">
-        <div class="project-card">Project 1</div>
-        <div class="project-card">Project 2</div>
-        <div class="project-card">Project 3</div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section contact fade-in">
-        <h2>Contact Me</h2>
-        <form id="contactForm">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="btn primary">Send Message</button>
-        </form>
-        <p>{{data}}</p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Umofia Anthony Inemesit. All rights reserved.</p>
-    </footer>
-    
-
-    <div class="loading"></div>
-    <!-- <main>
+    <main>
         <section id="first">
-            <i class="fa-brands fa-html5"></i>
-            <i class="fa-brands fa-css3"></i>
-            <i class="fa-brands fa-css3-alt"></i>
-            <i class="fa-brands fa-react"></i>
-            <i class="fa-brands fa-vuejs"></i>
-            <i class="fa-solid fa-database"></i>
-            <i class="fa-solid fa-code-branch"></i>
-            <i class="fa-solid fa-server"></i>
-            <i class="fa-brands fa-square-js"></i>
-            <i class="fa-brands fa-python"></i>
+            <!-- <video autoplay muted loop id="myVideo">
+                <source src="https://www.pexels.com/download/video/7677746/" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video> -->
         </section>
-
-        <div class="shape">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </main> -->
-
+    </main>
 </body>
-<script src="/static/app.js" defer></script>
+<script src="/static/app.js"defer></script>
 </html>
