@@ -28,6 +28,10 @@ header{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   position: relative;
 }
+header.scrolling{
+  backdrop-filter: blur(20px) brightness(30%);
+  height: 70px;
+}
 header div h3{
   color: white;
   text-transform: capitalize;
@@ -104,6 +108,37 @@ main section:first-child{
   background-repeat: no-repeat;
   margin-top: -100px;
 }
+main section:first-child .hero{
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+main section:first-child .hero img{
+  position: absolute;
+  bottom: 0;
+  width: 40%;
+  height: 50vh;
+  max-height: 50vh;
+  object-fit: cover;
+}
+main section .hero img:first-child{
+  top: 10%;
+  z-index: 5;
+  left: 50%;
+  transform: translateX(-50%);
+}
+main section .hero img:nth-child(2){
+  left: 0%;
+}
+main section .hero img:nth-child(3){
+  left: 50%;
+  transform: translateX(-50%);
+}
+main section .hero img:last-child{
+  right: 0;
+}
+
 
 @media screen and (max-width: 850px) {
   header ul{
@@ -114,6 +149,7 @@ main section:first-child{
     backdrop-filter: blur(20px) brightness(50%);
     opacity: 0;
     pointer-events: none;
+    z-index: 6;
   }  
   header ul li{
     margin: 20px auto;
@@ -122,5 +158,13 @@ main section:first-child{
   }
   header nav{
     display: block;
+  }
+
+  main section .hero img:nth-child(2),
+  main section .hero img:last-child{
+    display: none;
+  }
+  main section .hero img:nth-child(3){
+    width: 100%;
   }
 }
