@@ -133,7 +133,6 @@ main section:first-child .content{
   width: 70%;
   margin: auto;
   line-height: 1.5;
-  /* border: 1px dashed rgba(179, 176, 176, 0.9); */
   padding: 2em;
 }
 main section:first-child .content h1{
@@ -147,6 +146,7 @@ main section:first-child .socials{
   transform: translateY(-50%);
   display: grid;
   gap: 15px;
+  padding: 1em;
 }
 main section:first-child .socials a{
   text-decoration: none;
@@ -160,13 +160,90 @@ main section:first-child .socials i{
 main section:first-child .socials a:hover i{
   scale: 1.1;
   color: var(--maize);
-  margin-top: -5px;
 }
 
 
 /* SECOND */
 main section:nth-child(2){
   color: black;
+  text-align: center;
+  padding: 3em 2em;
+}
+main section:nth-child(2) h1{
+  font-variant: small-caps;
+  text-transform: capitalize;
+}
+main section:nth-child(2) #services{
+  position: relative;
+}
+main section:nth-child(2) #services::before{
+  height: 100px;
+  width: 200px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main section:nth-child(2) .services{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 80%;
+  margin: 30px auto;
+}
+main section:nth-child(2) .services div{
+  cursor: pointer;
+  padding: 2em;
+  position: relative;
+  border-radius: 10px;
+  background: white;
+}
+@property --angle{
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+main section:nth-child(2) .services div::after,
+main section:nth-child(2) .services div::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: conic-gradient(from var(--angle), blue, red, transparent);
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  z-index: -1;
+  padding: 1px;
+  transition: filter 0.5s ease-in-out;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin{
+  from{--angle:0deg}
+  to{--angle:360deg}
+}
+main section:nth-child(2) .services div::before{
+  filter: blur(10px);
+}
+main section:nth-child(2) .services div:hover::after{
+  filter: blur(20px);
+  animation: none;
+}
+main section:nth-child(2) .services div p{
+  line-height: 1.5;
+  margin-top: 10px;
+}
+main section:nth-child(2) .services div h3{
+  margin-top: 10px;
+  font-variant: small-caps;
+}
+main section:nth-child(2) .services div i{
+  font-size: 40px;
+  color: transparent;
+  background-image: linear-gradient(to right, red, blue);
+  background-clip: text;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
 }
 
 @media screen and (max-width: 850px) {
@@ -174,20 +251,19 @@ main section:nth-child(2){
     height: 70px;
   }
   header ul{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #000000;
+    position: absolute;
+    top: 100%;
     display: grid;
-    place-content: center;
-    opacity: 0;
+    gap: 20px;
+    width: 100%;
     transform: translateY(-20px);
-    pointer-events: none;
+    opacity: 0;
+    backdrop-filter: blur(20px) brightness(50%);
+    background: black;
+    padding: 2em 0;
   }  
   header ul li{
-    margin: 0px auto;
+    margin: auto;
     text-align: center;
     width: fit-content;
   }
@@ -209,7 +285,15 @@ main section:nth-child(2){
     gap: 15px;
     width: fit-content;
   }
+  main section:first-child .socials a:hover i{
+    margin-top: -5px;
+  }
   main section:first-child .content h1{
     font-size: 35px;
+  }
+
+  /* SECOND */
+  main section:nth-child(2) .services{
+    grid-template-columns: 1fr;
   }
 }
