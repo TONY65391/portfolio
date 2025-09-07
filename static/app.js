@@ -5,6 +5,25 @@ openBtn.onclick = () => {
     openBtn.classList.toggle('open');
     menu.classList.toggle('open');
 }
+
+const sections = document.querySelectorAll('main section');
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+        if (entry.isIntersecting){
+            entry.target.classList.add('show');
+        }else{
+            entry.target.classList.remove('show');
+        };
+    });
+}, { threshold : 0.2 });
+
+sections.forEach(section => {observer.observe(section);})
+
+
+
+
 // const fadeElements = document.querySelectorAll('.fade-in');
 
 // const observer = new IntersectionObserver(entries => {
