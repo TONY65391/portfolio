@@ -21,7 +21,18 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(section => {observer.observe(section);})
 
+const toTop = document.querySelector('.top');
 
+window.addEventListener('load', () => {
+    if (window.scrollY <= 200){
+        toTop.classList.add('hide');
+    }else{toTop.classList.remove('hide')};
+});
+window.addEventListener('scroll', () => {
+    if (window.scrollY <= 200){
+        toTop.classList.add('hide');
+    }else{toTop.classList.remove('hide')};
+});
 
 
 // const fadeElements = document.querySelectorAll('.fade-in');
