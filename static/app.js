@@ -21,6 +21,21 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(section => {observer.observe(section);})
 
+
+const footer = document.querySelector('footer');
+
+const FooterObserver = new IntersectionObserver(entry => {
+    if (entry[0].isIntersecting){
+        entry[0].target.classList.add('show');
+    }else{
+        entry[0].target.classList.remove('show');
+    }
+}, { threshold : 0.2 });
+
+
+FooterObserver.observe(footer);
+
+
 const toTop = document.querySelector('.top');
 
 window.addEventListener('load', () => {
@@ -34,6 +49,10 @@ window.addEventListener('scroll', () => {
     }else{toTop.classList.remove('hide')};
 });
 
+const toggle = document.getElementById('theme');
+toggle.onclick = () => {
+    document.querySelector('body').classList.toggle('dark');
+}
 
 // const fadeElements = document.querySelectorAll('.fade-in');
 

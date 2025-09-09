@@ -26,6 +26,7 @@ body{
   color: var(--White);
   width: min(1500px, 100%);
   margin: auto;
+  overflow-x: hidden;
 }
 
 header{
@@ -34,7 +35,7 @@ header{
   justify-content: space-around;
   height: 100px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  backdrop-filter: blur(20px) brightness(50%);
+  backdrop-filter: blur(2px) brightness(100%);
   position: sticky;
   top: 0;
   z-index: 1;
@@ -165,6 +166,38 @@ main section:first-child .content{
 main section:first-child .content h1{
   font-size: 50px;
   font-variant: small-caps;
+  position: relative;
+  border-radius: 10px;
+  width: fit-content;
+  margin: auto;
+  background: black;
+  padding: 0px 20px;
+}
+main section:first-child .content h1 span{
+  background: conic-gradient(red, blue, red);
+  background-clip: text;
+  color: transparent;
+}
+main section:first-child .content h1::after,
+main section:first-child .content h1::before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  border-radius: inherit;
+  background: conic-gradient(blue, red, blue);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  padding: 4px 6px 4px 4px;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.3), 2px 2px 30px rgba(0, 0, 0, 0.3);
+}
+main section:first-child .content h1::before{
+  filter: blur(20px);
+}
+main section:first-child .content p{
+  margin-top: 10px;
 }
 main section:first-child .socials{
   position: absolute;
@@ -221,7 +254,8 @@ main section{
   opacity: 0;
   pointer-events: none;
 }
-main section.show{
+main section.show,
+footer.show{
   transform: translate(0px);
   opacity: 1;
   pointer-events: all;
@@ -375,6 +409,8 @@ main section:nth-child(3) .content .arch{
   border-radius: 10px;
   cursor: pointer;
   border: 1px solid wheat;
+  transform: translateY(20px);
+  opacity: 0;
 }
 main section:nth-child(3) .content .arch i{
   font-size: 30px;
@@ -394,7 +430,18 @@ main section:nth-child(3) .content .arch h2{
 main section:nth-child(3) .content .arch p{
   font-variant: small-caps;
 }
-
+main section:nth-child(3).show .content .arch{
+  animation: slideUp 0.3s ease-in-out forwards;
+}
+main section:nth-child(3).show .content .arch:first-child{
+  animation-delay: 0.3s;
+}
+main section:nth-child(3).show .content .arch:nth-child(2){
+  animation-delay: 0.6s;
+}
+main section:nth-child(3).show .content .arch:last-child{
+  animation-delay: 0.9s;
+}
 
 /* FOURTH */
 main section:nth-child(4){
@@ -423,12 +470,59 @@ main section:nth-child(4) .tools .tool{
   background: black;
   color: wheat;
   border-radius: 10px;
+  transform: translateY(20px);
+  opacity: 0;
 }
 main section:nth-child(4) .tools .tool i{
   font-size: 70px;
   margin-bottom: 20px;
 }
+main section:nth-child(4).show .tools .tool{
+  animation: slideUp 0.5s ease-in-out forwards;
+}
+main section:nth-child(4).show .tools .tool:nth-child(2){
+  animation-delay: 0.3s;
+}
+main section:nth-child(4).show .tools .tool:nth-child(3){
+  animation-delay: 0.6s;
+}
+main section:nth-child(4).show .tools .tool:nth-child(4){
+  animation-delay: 0.9s;
+}
+main section:nth-child(4).show .tools .tool:nth-child(5){
+  animation-delay: 1.2s;
+}
+main section:nth-child(4).show .tools .tool:nth-child(6){
+  animation-delay: 1.5s;
+}
+main section:nth-child(4).show .tools .tool:nth-child(7){
+  animation-delay: 1.8s;
+}
+main section:nth-child(4).show .tools .tool:nth-child(8){
+  animation-delay: 2.1s;
+}
+main section:nth-child(4).show .tools .tool:nth-child(9){
+  animation-delay: 2.4s;
+}
+main section:nth-child(4).show .tools .tool:nth-child(10){
+  animation-delay: 2.7s;
+}
+main section:nth-child(4).show .tools .tool:nth-child(11){
+  animation-delay: 3s;
+}
+main section:nth-child(4).show .tools .tool:last-child{
+  animation-delay: 3.3s;
+}
 
+/* BODY MODS */
+body.dark main section#hire-me,
+body.dark main section#projects{
+  color: white;
+}
+body.dark main section#projects h3{
+  background: white;
+  color: black;
+}
 
 /* PROJECTS */
 main section#projects{
@@ -447,6 +541,10 @@ main section#projects h3{
   border-radius: 20px;
   letter-spacing: 5px;
 }
+main section#projects h2,
+main section#projects h4{
+  color: black;
+}
 main section#projects .projects{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -461,6 +559,34 @@ main section#projects .projects .project{
   padding: 1em;
   border-radius: 10px;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3), 2px 2px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(40px);
+  opacity: 0;
+}
+main section#projects.show .projects .project{
+  animation: slideUp 0.5s ease-in-out forwards;
+}
+@keyframes slideUp{
+  to{
+    transform: translate(0) scale(1);
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+  }
+}
+main section#projects.show .projects .project:nth-child(2){
+  animation-delay: 0.3s;
+}
+main section#projects.show .projects .project:nth-child(3){
+  animation-delay: 0.6s;
+}
+main section#projects.show .projects .project:nth-child(4){
+  animation-delay: 0.9s;
+}
+main section#projects.show .projects .project:nth-child(5){
+  animation-delay: 1.2s;
+}
+main section#projects.show .projects .project:last-child{
+  animation-delay: 1.5s;
 }
 main section#projects .projects .project h2{
   margin: 10px 0 0 0;
@@ -494,8 +620,8 @@ main section#hire-me{
   line-height: 1.5;
   font-variant: small-caps;
   border-radius: 20px;
-  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.3), 2px 2px 30px rgba(0, 0, 0, 0.3);
 }
+
 main section#hire-me form .names{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -538,6 +664,98 @@ main section#hire-me input[type="submit"]:hover{
   background: var(--Wheat);
   cursor: pointer;
   color: white;
+}
+
+
+body.dark{
+  background: black;
+  color: white;
+}
+
+
+/* FOOTER */
+footer{
+  margin-top: 40px;
+  padding: 2em;
+  background: black;
+  background-image: url(/static/images/background_image.gif);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: wheat;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  transform: translateY(30px);
+  opacity: 0;
+}
+footer div{
+  text-align: center;
+  padding: 2em;
+  transform: translateX(30px);
+  opacity: 0;
+}
+footer.show div{
+  transform: translate(0);
+  opacity: 1;
+}
+footer.show div:first-child{
+  transition-delay: 0.5s;
+}
+footer.show div:nth-child(2){
+  transition-delay: 1s;
+}
+footer.show div:last-child{
+  transition-delay: 1.5s;
+}
+footer .socials{
+  display: flex;
+  align-items: center;
+}
+footer div a{
+  display: block;
+  text-decoration: none;
+  color: wheat;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+  width: fit-content;
+  position: relative;
+}
+footer div a::after{
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: wheat;
+  border-radius: 5px;
+  content: "";
+  transition: width 0.5s ease-in-out;
+}
+footer div a:hover::after{
+  width: 100%;
+}
+footer div a i{
+  color: wheat;
+  font-size: 30px;
+}
+footer div h3{
+  margin: 10px 0;
+  text-decoration: underline;
+  font-variant: small-caps;
+}
+footer div p{
+  line-height: 1.5;
+}
+footer img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 @media screen and (max-width: 900px) {
   header{
@@ -620,5 +838,15 @@ main section#hire-me input[type="submit"]:hover{
   main section#projects .projects{
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
+  }
+
+  main section#hire-me{
+    border-radius: 0px;
+  }
+
+  /* FOOTER */
+  footer{
+    grid-template-columns: 1fr;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   }
 }
