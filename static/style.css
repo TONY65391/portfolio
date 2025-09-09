@@ -693,7 +693,7 @@ footer{
 footer div{
   text-align: center;
   padding: 2em;
-  transform: translateX(30px);
+  transform: translateY(50px);
   opacity: 0;
 }
 footer.show div{
