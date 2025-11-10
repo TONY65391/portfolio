@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-user-select: none;
   user-select: none;
   transition: all 0.5s ease-in-out;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -26,6 +27,7 @@ body{
   color: var(--White);
   width: min(1500px, 100%);
   margin: auto;
+  background: rgba(27, 27, 27, 27);
   overflow-x: hidden;
 }
 
@@ -35,12 +37,14 @@ header{
   justify-content: space-around;
   height: 100px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  -webkit-backdrop-filter: blur(2px) brightness(100%);
   backdrop-filter: blur(2px) brightness(100%);
   position: sticky;
   top: 0;
   z-index: 1;
 }
 header.scrolling{
+  -webkit-backdrop-filter: blur(20px) brightness(30%);
   backdrop-filter: blur(20px) brightness(30%);
   height: 70px;
 }
@@ -247,18 +251,6 @@ main section:first-child #scroll-down a{
 main section:first-child #scroll-down i{
   color: wheat;
   font-size: 16px;
-}
-
-main section{
-  transform: translateY(20px);
-  opacity: 0;
-  pointer-events: none;
-}
-main section.show,
-footer.show{
-  transform: translate(0px);
-  opacity: 1;
-  pointer-events: all;
 }
 
 /* SECOND */
@@ -541,6 +533,9 @@ main section#projects h3{
   border-radius: 20px;
   letter-spacing: 5px;
 }
+main section#projects h1{
+  color: white;
+}
 main section#projects h2,
 main section#projects h4{
   color: black;
@@ -611,59 +606,117 @@ main section#projects .projects .project a:hover{
   color: black;
 }
 
-/* HIRE-ME */
-main section#hire-me{
-  color: black;
-  padding: 100px 5vw;
-  width: min(900px, 100%);
+main #hire-me{
+  display: flex;
+  align-items: start;
+  width: 90%;
   margin: auto;
-  line-height: 1.5;
-  font-variant: small-caps;
-  border-radius: 20px;
+  gap: 30px;
 }
-
-main section#hire-me form .names{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin: 30px 0;
-}
-main section#hire-me form .names div{
+main #hire-me .faq{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 100%;
+}
+main #hire-me .faq .question{
+  border: 1px solid wheat;
+  border-radius: 20px;
+  overflow: hidden;
+}
+main #hire-me .faq .question h3{
+  padding: 15px;
+  text-transform: capitalize;
+  font-variant: small-caps;
+  background: wheat;
+  color: black;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
 }
-main section#hire-me form div label{
-  padding: 1em;
-  background: wheat;
+main #hire-me .faq .question h3:hover{
+  background: rgb(235, 190, 107);
 }
-main section#hire-me form .names div input{
-  border: 2px solid wheat;
+main #hire-me .faq .question p{
+  padding: 15px;
+  max-height: 0px;
+  padding: 0;
+}
+main #hire-me .faq .question p.open{
+  max-height: 2000px;
+  padding: 15px;
+}
+
+main #hire-me form{
+  padding: 10px;
+  width: 100%;
+}
+main #hire-me form h1{
+  font-variant: small-caps;
+  margin: 20px 0px;
+}
+main #hire-me form h3{
+  color: gray;
+}
+main #hire-me form .set{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 10px 0;
+}
+main #hire-me form .set div{
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+  -webkit-backdrop-filter: blur(5px) brightness(70%);
+  backdrop-filter: blur(5px) brightness(70%);
+  border-radius: 5px;
+  overflow: hidden;
+  color: wheat;
+  border: 2px solid transparent;
+}
+main #hire-me form .set div input{
   width: 100%;
   height: 100%;
-  padding: 1em;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  color: wheat;
 }
-main section#hire-me div{
-  display: flex;
-  align-items: top;
-}
-main section#hire-me form textarea{
+main #hire-me form .set div:hover,
+main #hire-me form .set div:focus,
+main #hire-me form textarea:hover,
+main #hire-me form textarea:focus,
+main #hire-me form button:hover,
+main #hire-me form button:focus{
   border: 2px solid wheat;
+}
+
+main #hire-me form textarea{
+  width: 100%;
+  padding: 10px;
+  background: none;
+  -webkit-backdrop-filter: blur(5px) brightness(70%);
+  backdrop-filter: blur(5px) brightness(70%);
+  color: wheat;
+  border-radius: 5px;
+  border: 2px solid transparent;
   resize: none;
-  width: 100%;
-  padding: 1em;
 }
-main section#hire-me input[type="submit"]{
+main #hire-me form button{
+  margin-top: 20px;
   width: 100%;
-  margin: 20px 0;
-  padding: 1.5em;
-  background: wheat;
-  border-radius: 10px;
-}
-main section#hire-me input[type="submit"]:hover{
-  background: var(--Wheat);
+  border: 2px solid transparent;
+  padding: 15px;
+  text-align: center;
+  color: wheat;
+  background: none;
   cursor: pointer;
-  color: white;
+  -webkit-backdrop-filter: blur(5px) brightness(70%);
+  backdrop-filter: blur(5px) brightness(70%);
+  border-radius: 5px;
 }
 
 
@@ -687,8 +740,6 @@ footer{
   grid-template-columns: repeat(3, 1fr);
   place-content: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  transform: translateY(30px);
-  opacity: 0;
 }
 footer div{
   text-align: center;
@@ -840,8 +891,18 @@ footer img{
     width: 100%;
   }
 
-  main section#hire-me{
-    border-radius: 0px;
+  main #hire-me{
+    /* flex-direction: column; */
+    display: block;
+  }
+  main #hire-me .faq{
+    width: 100%;
+  }
+  main #hire-me .faq h1{
+    text-align: center;
+  }
+  main #hire-me form{
+    margin-top: 50px;
   }
 
   /* FOOTER */

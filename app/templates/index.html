@@ -1,4 +1,4 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="icon" href="/static/images/feem_1d2ffcacc8829_IMG-20250903-WA0121.jpg">
-
+    {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>KingTony | Web Developer</title>
 </head>
@@ -41,11 +41,6 @@
                 <i class="fa-solid fa-diagram-project"></i>
                 Projects
             </a></li>
-
-            <!-- <li><a href="#about" id="contact">
-                <i class="fa-solid fa-id-card"></i>
-                About
-            </a></li> -->
 
             <li><a href="#hire-me" id="hire">
                 <i class="fa-solid fa-business-time"></i>
@@ -147,7 +142,7 @@
                     </div>
 
                     <div>
-                        <h2><span counter="60">60</span> +</h2>
+                        <h2><span class="counter" data-target="60">30</span> +</h2>
                         <p>Satisfied Clients</p>
                     </div>
                 </div>
@@ -158,7 +153,7 @@
                     </div>
 
                     <div>
-                        <h2><span counter="30">30</span> +</h2>
+                        <h2><span class="counter" data-target="30">15</span> +</h2>
                         <p>Projects Completed</p>
                     </div>
                 </div>
@@ -169,7 +164,7 @@
                     </div>
 
                     <div>
-                        <h2><span counter="4">4</span> +</h2>
+                        <h2><span class="counter" data-target="4">6</span> +</h2>
                         <p>Years of Experience</p>
                     </div>
                 </div>
@@ -251,11 +246,11 @@
                 <div class="projects">
                     <div class="project">
                         <div>
-                            <img src="/static/images/vertical.png" alt="">
+                            <img src="/static/images/slideshow.png" alt="">
                         </div>
-                        <h2>Vertical Limit Academy</h2>
-                        <h4>Educational Web Application</h4>
-                        <a href="">View Project</a>
+                        <h2>Slideshow Carousel</h2>
+                        <h4>Image Slider</h4>
+                        <a href="https://slideshow-roan.vercel.app/">View Project</a>
                     </div>
 
                     <div class="project">
@@ -269,11 +264,20 @@
 
                     <div class="project">
                         <div>
+                            <img src="/static/images/xtracrypto.png" alt="">
+                        </div>
+                        <h2>XtraCrypto Stock Exchange</h2>
+                        <h4>Crypto exchange platform</h4>
+                        <a href="https://xtracrypto.vercel.app/">View Project</a>
+                    </div>
+
+                    <div class="project">
+                        <div>
                             <img src="/static/images/portfolio.png" alt="">
                         </div>
                         <h2>My Portfolio Website</h2>
                         <h4>Mass Display</h4>
-                        <a href="https://kingtony.vercel.app/">View Project</a>
+                        <a href="https://tondev-portfolio.vercel.app/">View Project</a>
                     </div>
 
                     <div class="project">
@@ -308,38 +312,66 @@
         </section>
 
         <section id="hire-me">
-            <h4>Make Contact</h4>
-            <h1>Ensure to contact and reach out to me if you're in need of my services</h1>
+            <div class="faq">
+                <h1>FAQ's</h1>
+                <div class="question">
+                    <h3>Do you build websites for upcoming and start-up businesses? <i class="fa-solid fa-arrow-down"></i></h3>
+                    <p>Absolutely, no one is left out of getting an online presence and it's easier than you think to get one for your business.</p>
+                </div>
+                <div class="question">
+                    <h3>What field do you specialize in? <i class="fa-solid fa-arrow-down"></i></h3>
+                    <p>I specialize in viewer-converting and attractive websites. I don't just build client-converting websites but i partner with your brand to enable you reach you target audience</p>
+                </div>
+                <div class="question">
+                    <h3>What kind of websites do you build? <i class="fa-solid fa-arrow-down"></i></h3>
+                    <p>I specialize in creating responsive, high-performance websites — from personal portfolios and business landing pages to full-stack web applications. Every project is tailored to meet the client’s goals and brand identity.</p>
+                </div>
+                <div class="question">
+                    <h3>How long does it take to build a website? <i class="fa-solid fa-arrow-down"></i></h3>
+                    <p>The timeline strictly depends on the complexity of your website. A two page website could take 3 days complete build, deployment and testing stages to ensure it is ready to be used by the general public.</p>
+                </div>
+                <div class="question">
+                    <h3>Will my website work on mobile devices? <i class="fa-solid fa-arrow-down"></i></h3>
+                    <p>Absolutely! All my websites are fully responsive, meaning they adapt seamlessly to all screen sizes — from desktops to smartphones — ensuring a smooth user experience everywhere.</p>
+                </div>
+                <div class="question">
+                    <h3>Can you help with website<br> updates or maintenance after launch? <i class="fa-solid fa-arrow-down"></i></h3>
+                    <p>Yes. I offer ongoing maintenance and support services, including updates, bug fixes, performance optimization, and security monitoring — so your site stays fast and reliable long after launch.</p>
+                </div>
+            </div>
 
-            <form action="#">
-                <div class="names">
+            <form action="">
+                <h1>Make Contact</h1>
+                <h3>You can reach out to me through the form below and be sure to expect a reply soonest</h3>
+                <div class="set">
                     <div>
-                        <label for="name"><i class="fa-solid fa-signature"></i></label>
-                        <input type="text" id="name" placeholder="Name" required>
+                        <input type="text" placeholder="Business name" id="business">
+                        <label for="business"><i class="fa-solid fa-briefcase"></i></label>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Full name" id="name">
+                        <label for="name"><i class="fa-solid fa-user"></i></label>
+                    </div>
+                </div>
+
+                <div class="set">
+                    <div>
+                        <input type="email" placeholder="Your active email" id="email">
+                        <label for="email"><i class="fa-solid fa-envelope"></i></label>
                     </div>
 
                     <div>
-                        <label for="email"><i class="fa-solid fa-inbox"></i></label>
-                        <input type="email" id="email" placeholder="Email" required>
-                    </div>
-
-                    <div>
-                        <label for="phone"><i class="fa-solid fa-phone"></i></label>
-                        <input type="tel" id="phone" placeholder="Phone" required>
-                    </div>
-
-                    <div>
-                        <label for="project"><i class="fa-solid fa-list-check"></i></label>
-                        <input type="text" id="project" placeholder="Project" required>
+                        
+                        <input type="tel" name="" id="number" placeholder="1234-567-8900">
+                        <label for="number"><i class="fa-solid fa-phone"></i></label>
                     </div>
                 </div>
 
                 <div>
-                    <label for="message"><i class="fa-solid fa-message"></i></label>
-                    <textarea name="message" id="message" rows="10" cols="10" placeholder="Message"></textarea>
+                    <textarea id="message" placeholder="Give us details about your business" cols="30" rows="10"></textarea>
                 </div>
 
-                <input type="submit" value="Send Message">
+                <button type="button">Send Message</button>
             </form>
         </section>
 

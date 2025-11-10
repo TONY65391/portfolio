@@ -27,8 +27,6 @@ const footer = document.querySelector('footer');
 const FooterObserver = new IntersectionObserver(entry => {
     if (entry[0].isIntersecting){
         entry[0].target.classList.add('show');
-    }else{
-        entry[0].target.classList.remove('show');
     }
 }, { threshold : 0.2 });
 
@@ -54,32 +52,30 @@ toggle.onclick = () => {
     document.querySelector('body').classList.toggle('dark');
 }
 
-// const fadeElements = document.querySelectorAll('.fade-in');
+const update = () => {
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        let increment = target / 10000
+        if ( count < target ){
+            count += increment
+            counter.innerText = Math.ceil(count);
+            requestAnimationFrame(update)
+        }else{
+            counter.innerText = '0';
+        }
+    });
+};
 
-// const observer = new IntersectionObserver(entries => {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add('show');
-//     }
-//     else{
-//         entry.target.classList.remove('show');
-//     }
-//   });
-// }, { threshold: 0.2 });
 
-// fadeElements.forEach(el => observer.observe(el));
 
-// // Mobile nav toggle
-// const hamburger = document.getElementById("hamburger");
-// const navLinks = document.getElementById("navLinks");
-
-// hamburger.addEventListener("click", () => {
-//   navLinks.classList.toggle("active");
-// });
-
-// // Contact form handler
-// document.getElementById("contactForm")?.addEventListener("submit", function(e) {
-//   e.preventDefault();
-//   alert("Thank you for reaching out! I will get back to you soon.");
-// //   this.reset();
-// });
+const headers = document.querySelectorAll('main #hire-me .faq h3');
+headers.forEach(header => {
+    header.addEventListener('click', () => {
+        headers.forEach(item => {
+            const content = item.nextElementSibling;
+            const i = item.querySelector('i');
+            header === item ? (content.classList.toggle('open'), i.classList.remove(`fa-arrow-down`), i.classList.add(`fa-arrow-up`)) : (content.classList.remove('open'), i.classList.add('fa-arrow-down'), i.classList.remove('fa-arrow-up'));
+        });
+    });
+});
