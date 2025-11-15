@@ -1,57 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="icon" href="/static/images/feem_1d2ffcacc8829_IMG-20250903-WA0121.jpg">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>KingTony | Web Developer</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <title>TonDev - Website Developer</title>
 </head>
 <body>
     <header>
-        <div>
-            <h3>
-                <i class="fa-solid fa-person"></i>
-                Umofia Anthony
-            </h3>
-        </div>
+        <div class="logo">MyPortfolio</div>
 
-        <ul>
-            <li><a href="#home">
-                <i class="fa-solid fa-house"></i>
-                Home
-            </a></li>
-
-            <li><a href="#services">
-                <i class="fa-solid fa-award"></i>
-                Services
-            </a></li>
-
-            <li><a href="#tools">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                tools
-            </a></li>
-
-            <li><a href="#projects">
-                <i class="fa-solid fa-diagram-project"></i>
-                Projects
-            </a></li>
-
-            <li><a href="#hire-me" id="hire">
-                <i class="fa-solid fa-business-time"></i>
-                Hire Me
-            </a></li>
-
-            <li id="theme" theme="light"><a href="#">
-                <i class="fa-solid fa-toggle-on"></i>
-                Toggle
-            </a></li>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <a href="#hire-me" class="cta-btn">Hire Me</a>
 
         <nav>
             <div></div>
@@ -59,397 +27,24 @@
             <div></div>
         </nav>
     </header>
-    
-    <a href="#home" class="top"><i class="fa-solid fa-up-long"></i></a>
 
     <main>
-        
-        <section id="home">
+        <div id="home" class="hero">
             <div class="content">
-                <h1>Hello! This Is <span>TonDev</span></h1>
-                <p>A Full-Stack Website Developer and Programmer</p>
-                <p>Website Designer | Virtual Assistant | Web3 Developer | Mobile Game Developer | Mobile App Developer | Data Analysis and Data Entry</p>
-            </div>
-
-            <div id="scroll-down">
-                <a href="#projects"><i class="fa-solid fa-down-long"></i></a>
-            </div>
-
-            <div class="socials">
-                <a href="https://www.facebook.com/profile.php?id=61580504160296">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://x.com/Web3Dev65391?t=28acQ-x17MSBAZXXMylAmw&s=09">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=zes7b5z">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://wa.me/message/2K74D4IVW5QPL1">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-                <a href="https://tiktok.com/@tondev4">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-            </div>
-        </section>
-
-        <section id="services">
-            <div class="content">
-                <p id="service">SERVICES PROVIDED</p>
-                <h1>Build mobile-friendly responsive websites and web applications</h1>
-
-                <div class="services">
-                    <div>
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                        <h2>Mobile App Development</h2>
-                        <p><i class="fa-solid fa-check"></i>Fintech Apps</p>
-                        <p><i class="fa-solid fa-check"></i>E-commerce Apps</p>
-                        <p><i class="fa-solid fa-check"></i>E-learning Apps</p>
-                        <p><i class="fa-solid fa-check"></i>React Native</p>
-                        <p><i class="fa-solid fa-check"></i>Flutter</p>
-                    </div>
-
-                    <div>
-                        <i class="fa-solid fa-display"></i>
-                        <h2>Front-End Development</h2>
-                        <p><i class="fa-solid fa-check"></i>Hero Section</p>
-                        <p><i class="fa-solid fa-check"></i>Landing Pages</p>
-                        <p><i class="fa-solid fa-check"></i>Construction Websites</p>
-                        <p><i class="fa-solid fa-check"></i>Educational Websites</p>
-                        <p><i class="fa-solid fa-check"></i>Web3 Development</p>
-                    </div>
-
-                    <div>
-                        <i class="fa-solid fa-satellite"></i>
-                        <h2>Back-End Development</h2>
-                        <p><i class="fa-solid fa-check"></i>API Integration</p>
-                        <p><i class="fa-solid fa-check"></i>Data Manipulation</p>
-                        <p><i class="fa-solid fa-check"></i>Python,Django</p>
-                        <p><i class="fa-solid fa-check"></i>Rust,Laravel</p>
-                        <p><i class="fa-solid fa-check"></i>Database</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h1>Professional Feats</h1>
-            <div class="content">
-                <div class="arch">
-                    <div>
-                        <i class="fa-solid fa-user-secret"></i>
-                    </div>
-
-                    <div>
-                        <h2><span class="counter" data-target="60">30</span> +</h2>
-                        <p>Satisfied Clients</p>
-                    </div>
-                </div>
-
-                <div class="arch">
-                    <div>
-                        <i class="fa-solid fa-list-check"></i>
-                    </div>
-
-                    <div>
-                        <h2><span class="counter" data-target="30">15</span> +</h2>
-                        <p>Projects Completed</p>
-                    </div>
-                </div>
-
-                <div class="arch">
-                    <div>
-                        <i class="fa-solid fa-calendar-days"></i>
-                    </div>
-
-                    <div>
-                        <h2><span class="counter" data-target="4">6</span> +</h2>
-                        <p>Years of Experience</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="tools">
-            <h1>My Programming Languages And Frameworks</h1>
-            <div class="tools">
-                <div class="tool">
-                    <i class="fa-brands fa-html5"></i>
-                    <h3>HTML</h3>
-                </div>
-
-                <div class="tool">
-                    <i class="fa-brands fa-css3"></i>
-                    <h3>CSS</h3>
-                </div>
-
-                <div class="tool">
-                    <i class="fa-brands fa-js"></i> 
-                    <h3>Vanilla JavaScript</h3>
-                </div>
-
-                <div class="tool">
-                    <i class="fa-brands fa-python"></i>
-                    <h3>Python</h3>
-                </div>
-
-                <div class="tool">
-                    <i class="fa-brands fa-node-js"></i>
-                    <h3>Node.Js</h3>
-                </div>
-
-                <div class="tool">
-                    <i class="fa-brands fa-react"></i>
-                    <h3>React</h3>
-                </div>
-
-                <div class="tool">
-                    <i class="fa-brands fa-vuejs"></i>
-                    <h3>Vue.Js</h3>
-                </div>
-
-                <div class="tool">
-                    <i class="fa-brands fa-flutter"></i>
-                    <h3>Flutter</h3>
-                </div>
-
-                <div class="tool">
-                    <i class="fa-brands fa-php"></i>
-                    <h3>PHP</h3>
-                </div>
-
-                <div class="tool">
-                    <i class="fa-brands fa-react"></i>
-                    <h3>React Native</h3>
-                </div>
-
-                <div class="tool">
-                    <i class="fa-brands fa-laravel"></i>
-                    <h3>Laravel</h3>
-                </div>
-
-                <div class="tool">
-                    <i class="fa-brands fa-rust"></i>
-                    <h3>Rust</h3>
-                </div>
-                
-                
-            </div>
-        </section>
-
-        <section id="projects">
-            <div class="content">
-                <h3>PORTFOLIO</h3>
-                <h1>Some of my awesome projects here</h1>
-
-                <div class="projects">
-                    <div class="project">
-                        <div>
-                            <img src="/static/images/slideshow.png" alt="">
-                        </div>
-                        <h2>Slideshow Carousel</h2>
-                        <h4>Image Slider</h4>
-                        <a href="https://slideshow-roan.vercel.app/">View Project</a>
-                    </div>
-
-                    <div class="project">
-                        <div>
-                            <img src="/static/images/cryptgo.png" alt="">
-                        </div>
-                        <h2>CryptGo Stock Exchange</h2>
-                        <h4>Bitcoin Exchange Website</h4>
-                        <a href="https://cryptgo-investment.vercel.app/">View Project</a>
-                    </div>
-
-                    <div class="project">
-                        <div>
-                            <img src="/static/images/xtracrypto.png" alt="">
-                        </div>
-                        <h2>XtraCrypto Stock Exchange</h2>
-                        <h4>Crypto exchange platform</h4>
-                        <a href="https://xtracrypto.vercel.app/">View Project</a>
-                    </div>
-
-                    <div class="project">
-                        <div>
-                            <img src="/static/images/portfolio.png" alt="">
-                        </div>
-                        <h2>My Portfolio Website</h2>
-                        <h4>Mass Display</h4>
-                        <a href="https://tondev-portfolio.vercel.app/">View Project</a>
-                    </div>
-
-                    <div class="project">
-                        <div>
-                            <img src="/static/images/feane.png" alt="">
-                        </div>
-                        <h2>Feane's Fast Food Restaurant</h2>
-                        <h4>Eatery | Restaurant Website</h4>
-                        <a href="https://my-aura-eight.vercel.app/">View Project</a>
-                    </div>
-
-                    <div class="project">
-                        <div>
-                            <img src="/static/images/chandos.png" alt="">
-                        </div>
-                        <h2>Chandos Construction Company</h2>
-                        <h4>Construction Company</h4>
-                        <a href="https://chandos.vercel.app/">View Project</a>
-                    </div>
-
-                    <div class="project">
-                        <div>
-                            <img src="/static/images/restoran.png" alt="">
-                        </div>
-                        <h2>Restoran Restaurant & Diner</h2>
-                        <h4>Eatery | Restaurant Website</h4>
-                        <a href="https://restoran-restaurant.vercel.app/">View Project</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="hire-me">
-            <div class="faq">
-                <h1>FAQ's</h1>
-                <div class="question">
-                    <h3>Do you build websites for upcoming and start-up businesses? <i class="fa-solid fa-arrow-down"></i></h3>
-                    <p>Absolutely, no one is left out of getting an online presence and it's easier than you think to get one for your business.</p>
-                </div>
-                <div class="question">
-                    <h3>What field do you specialize in? <i class="fa-solid fa-arrow-down"></i></h3>
-                    <p>I specialize in viewer-converting and attractive websites. I don't just build client-converting websites but i partner with your brand to enable you reach you target audience</p>
-                </div>
-                <div class="question">
-                    <h3>What kind of websites do you build? <i class="fa-solid fa-arrow-down"></i></h3>
-                    <p>I specialize in creating responsive, high-performance websites — from personal portfolios and business landing pages to full-stack web applications. Every project is tailored to meet the client’s goals and brand identity.</p>
-                </div>
-                <div class="question">
-                    <h3>How long does it take to build a website? <i class="fa-solid fa-arrow-down"></i></h3>
-                    <p>The timeline strictly depends on the complexity of your website. A two page website could take 3 days complete build, deployment and testing stages to ensure it is ready to be used by the general public.</p>
-                </div>
-                <div class="question">
-                    <h3>Will my website work on mobile devices? <i class="fa-solid fa-arrow-down"></i></h3>
-                    <p>Absolutely! All my websites are fully responsive, meaning they adapt seamlessly to all screen sizes — from desktops to smartphones — ensuring a smooth user experience everywhere.</p>
-                </div>
-                <div class="question">
-                    <h3>Can you help with website<br> updates or maintenance after launch? <i class="fa-solid fa-arrow-down"></i></h3>
-                    <p>Yes. I offer ongoing maintenance and support services, including updates, bug fixes, performance optimization, and security monitoring — so your site stays fast and reliable long after launch.</p>
+                <h4>TonDev 👋</h4>
+                <h1>I Build <span>Fast</span>, <span>Modern</span> & High-Converting Websites</h1>
+                <p>From idea to launch—get a sleek, responsive, SEO-optimized website built to grow your business and make your brand stand out online.</p>
+                <div class="cta">
+                    <button type="button">Get a free quote</button>
+                    <button type="button">See My Work</button>
                 </div>
             </div>
 
-            <form action="">
-                <h1>Make Contact</h1>
-                <h3>You can reach out to me through the form below and be sure to expect a reply soonest</h3>
-                <div class="set">
-                    <div>
-                        <input type="text" placeholder="Business name" id="business">
-                        <label for="business"><i class="fa-solid fa-briefcase"></i></label>
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Full name" id="name">
-                        <label for="name"><i class="fa-solid fa-user"></i></label>
-                    </div>
-                </div>
-
-                <div class="set">
-                    <div>
-                        <input type="email" placeholder="Your active email" id="email">
-                        <label for="email"><i class="fa-solid fa-envelope"></i></label>
-                    </div>
-
-                    <div>
-                        
-                        <input type="tel" name="" id="number" placeholder="1234-567-8900">
-                        <label for="number"><i class="fa-solid fa-phone"></i></label>
-                    </div>
-                </div>
-
-                <div>
-                    <textarea id="message" placeholder="Give us details about your business" cols="30" rows="10"></textarea>
-                </div>
-
-                <button type="button">Send Message</button>
-            </form>
-        </section>
-
-        <footer>
-            <div>
-                <img src="/static/images/Umofia-Anthony-Inemesit.jpg" alt="">
-                <h3>Credit</h3>
-                <p>Umofia Anthony Inemesit a.k.a TonDev</p>
-                <p>All Rights Reserved &copy; TonDev</p>
-                <p>Developed by <b><i>TonDev</i></b></p>
+            <div class="photo">
+                <img src="../static/images/tondev.jpeg" alt="TonDev Photo">
             </div>
-
-            <div>
-                <h3>Contacts</h3>
-                <a href="sms:09038776537">
-                    <i class="fa-solid fa-phone"></i>
-                    +234 903 8776 537
-                </a>
-
-                <a href="sms:09025468909">
-                    <i class="fa-solid fa-phone"></i>
-                    +234 902 5468 909
-                </a>
-
-                <a href="mailto:umofiainemesit65391@gmail.com">
-                    <i class="fa-solid fa-comments"></i>
-                    umofiainemesit65391@gmail.com
-                </a>
-            </div>
-
-                <div>
-                    <h3>My Socials</h3>
-                    <div class="socials">
-                        <a href="https://www.facebook.com/profile.php?id=61580504160296">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                        <a href="https://x.com/Web3Dev65391?t=28acQ-x17MSBAZXXMylAmw&s=09">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=zes7b5z">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="https://wa.me/message/2K74D4IVW5QPL1">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                        <a href="https://tiktok.com/@tondev4">
-                            <i class="fa-brands fa-tiktok"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--  -->
-
-
-        <!-- 
-        
-               
-        
-        
-        
-        
-        
-        
-        <i class="fa-solid fa-code"></i>
-        
-        
-        <i class="fa-solid fa-marker"></i>
-
-        
-        -->
-        <!-- <i class="fa-solid fa-quote-left"></i>
-        <i class="fa-solid fa-quote-right"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-circle-check"></i>
-         -->
-
+        </div>
     </main>
 </body>
-<script src="/static/app.js"defer></script>
+<script src="../static/app.js" defer></script>
 </html>
