@@ -9,11 +9,12 @@
   scroll-behavior: smooth;
 }
 :root{
+  --dark-blue: rgba(5, 7, 48, 0.1);
   --light-blue: rgba(24, 29, 112, 0.4);
   --lighter-blue : rgba(24, 29, 112, 0.9);
 }
 body{
-  background: rgb(2, 2, 34);
+  background: rgb(9, 9, 37);
   color: white;
   width: min(100%, 1500px);
   margin: auto;
@@ -132,8 +133,8 @@ header nav div:last-child{
   width: 15px;
 }
 @keyframes beat{
-  0%, 100%{box-shadow: 0px 0px 30px rgba(51, 49, 49, 0.7);}
-  50%{box-shadow: 0px 0px 70px rgba(51, 49, 49, 0.7);}
+  0%, 100%{box-shadow: 0px 0px 30px var(--lighter-blue);}
+  50%{box-shadow: 0px 0px 70px var(--lighter-blue);}
 }
 
 
@@ -275,7 +276,8 @@ main .services{
   margin-top: 100px;
   padding: 0px 30px;
 }
-main .services h3{
+main .services h3,
+main .tools h3{
   background: var(--light-blue);
   border: 2px solid var(--lighter-blue);
   padding: 7px 30px;
@@ -305,13 +307,46 @@ main .services .cards .card h4{
   font-variant: small-caps;
   text-transform: capitalize;
 }
+main .services .cards .card p{
+  color: gray;
+}
+
+
+/* TOOLS and TECH */
+main .tools{
+  margin-top: 100px;
+  padding: 0px 30px;
+}
+main .tools .cards{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 50px;
+  gap: 10px;
+}
+main .tools .cards .card{
+  background: var(--dark-blue);
+  border: 2px solid var(--lighter-blue);
+  text-align: center;
+  border-radius: 10px;
+  padding: 30px 0px;
+  cursor: pointer;
+}
+main .tools .cards .card:hover{
+  background: var(--light-blue);
+}
+main .tools .cards .card i{
+  font-size: 50px;
+  margin: 20px 0;
+}
+main .tools .cards .card h4{
+  color: var(--lighter-blue);
+  color: gray;
+}
 
 
 
 
-
-
-@media screen and (max-width:900px) {
+@media screen and (max-width:1000px) {
   header .cta-btn{
     display: none;
   }  
@@ -347,6 +382,7 @@ main .services .cards .card h4{
     left: 0;
     position: absolute;
     background: rgba(51, 49, 49, 0.3);
+    background: var(--light-blue);
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     animation: beat 1s ease infinite;
@@ -359,6 +395,7 @@ main .services .cards .card h4{
     right: 0;
     position: absolute;
     background: rgba(51, 49, 49, 0.3);
+    background: var(--light-blue);
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
     animation: beat 1s ease infinite;
@@ -367,6 +404,17 @@ main .services .cards .card h4{
     width: fit-content;
     margin: 15px auto;
   }
+
+  /* SERVICES */
+  main .services .cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main .tools .cards{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width:768px) {
 
   /* HERO */
   main .hero{
@@ -404,6 +452,12 @@ main .services .cards .card h4{
 
   /* SERVICES */
   main .services .cards{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* TOOLS */
+  main .tools .cards{
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
