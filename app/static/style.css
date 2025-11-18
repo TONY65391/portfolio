@@ -45,6 +45,10 @@ button{font-size: 16px;}
 .top:hover{
   box-shadow: 0px 0px 30px rgb(29, 15, 90);
 }
+.top.shrink{
+  scale: 0;
+  pointer-events: none;
+}
 
 
 /* HEADING */
@@ -255,7 +259,6 @@ main .about .photo img{
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  /* filter: grayscale(70%); */
   transform: scaleX(-1);
 }
 main .about .content{
@@ -263,7 +266,8 @@ main .about .content{
 }
 main .about .content h3{
   background: var(--light-blue);
-  border: 2px solid var(--lighter-blue);
+  border-top: 2px solid var(--lighter-blue);
+  border-left: 2px solid var(--lighter-blue);
   box-shadow: 0px 0px 30px rgb(29, 15, 90);
   width: fit-content;
   padding: 5px 30px;
@@ -302,9 +306,11 @@ main .services{
 }
 main .services h3,
 main .tools h3,
-main .projects h3{
+main .projects h3,
+main .reviews h3{
   background: var(--light-blue);
-  border: 2px solid var(--lighter-blue);
+  border-top: 2px solid var(--lighter-blue);
+  border-left: 2px solid var(--lighter-blue);
   box-shadow: 0px 0px 30px rgb(29, 15, 90);
   padding: 7px 30px;
   width: fit-content;
@@ -320,7 +326,8 @@ main .services .cards{
   margin-top: 50px;
 }
 main .services .cards .card{
-  border: 2px solid var(--lighter-blue);
+  border-right: 2px solid var(--lighter-blue);
+  border-top: 2px solid var(--lighter-blue);
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -352,7 +359,8 @@ main .tools .cards{
 }
 main .tools .cards .card{
   background: var(--dark-blue);
-  border: 2px solid var(--lighter-blue);
+  border-top: 2px solid var(--lighter-blue);
+  border-left: 2px solid var(--lighter-blue);
   text-align: center;
   border-radius: 10px;
   padding: 30px 0px;
@@ -418,7 +426,74 @@ main .projects .cards .card .content a:hover{
 main .projects .cards .card .content p{
   line-height: 1.5;
   color: gray;
+  margin-top: 10px;
 }
+
+
+/* REVIEWS */
+main .reviews{
+  padding-top: 100px;
+  padding: 100px 30px 0px 30px;
+}
+main .reviews .cards{
+  display: flex;
+  margin-top: 50px;
+  gap: 20px;
+  overflow-x: scroll;
+}
+@supports (scrollbar-width: none){
+  main .reviews .cards{
+    scrollbar-width: none;
+  }
+}
+main .reviews .cards .card{
+  width: min(500px, 90%);
+  border-top: 2px solid var(--light-blue);
+  border-left: 2px solid var(--light-blue);
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+main .reviews .cards .card:hover{
+  background: var(--light-blue);
+}
+main .reviews .cards .card i{
+  position: absolute;
+  font-size: clamp(2rem, 5vw, 3rem);
+  transform: scaleX(-1);
+  bottom: 0;
+  right: 0;
+  color: gray;
+}
+main .reviews .cards .card .text{
+  margin-top: 20px;
+  line-height: 1.5;
+}
+main .reviews .cards .card .details{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+main .reviews .cards .card .details h4{
+  color: rgb(204, 174, 6);
+  line-height: 1.5;
+}
+main .reviews .cards .card .details p{
+  color: gray;
+  line-height: 1.5;
+}
+main .reviews .cards .card .details img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* main .reviews .cards .card .client . */
+
 
 @media screen and (max-width:1000px) {
   header .cta-btn{
@@ -495,6 +570,10 @@ main .projects .cards .card .content p{
 
 @media screen and (max-width:768px) {
 
+  .top{
+    border-radius: 50%;
+    padding: 10px 15px;
+  }
   /* HERO */
   main .hero{
     display: block;
