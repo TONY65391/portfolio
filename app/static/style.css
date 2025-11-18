@@ -30,6 +30,22 @@ a {font-size: clamp(1rem, 1.5vw, 1.25rem);}
 /* button {font-size: clamp(1rem, 1.5vw, 1.25rem);} */
 button{font-size: 16px;}
 
+.top{
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  background: var(--light-blue);
+  border: 2px solid var(--lighter-blue);
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgb(29, 15, 90);
+}
+.top:hover{
+  box-shadow: 0px 0px 30px rgb(29, 15, 90);
+}
+
 
 /* HEADING */
 header{
@@ -143,7 +159,7 @@ main .hero{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 0px 30px;
-  margin-top: 150px;
+  padding-top: 150px;
 }
 main .hero .content{
   display: flex;
@@ -155,9 +171,10 @@ main .hero .content h4{
   margin-right: auto;
   background: var(--light-blue);
   border: 2px solid var(--lighter-blue);
-  box-shadow: 0px 0px 5px rgb(29, 15, 90);
+  box-shadow: 0px 0px 30px rgb(29, 15, 90);
   padding: 5px 30px;
   border-radius: 10px;
+  text-align: center;
 }
 main .hero .content h1{
   margin-top: 10px;
@@ -188,6 +205,7 @@ main .hero .content .cta a{
   border-radius: 10px;
   color: white;
   cursor: pointer;
+  text-decoration: none;
   border: 2px solid var(--lighter-blue);
   box-shadow: 0px 0px 5px rgb(29, 15, 90);
 }
@@ -211,6 +229,9 @@ main .hero .photo img{
   display: block;
   margin: auto;
   border-radius: 10px;
+  z-index: -1;
+  /* filter: grayscale(70%); */
+  transform: scaleX(-1);
   box-shadow: 0px 0px 30px rgb(29, 15, 90);
 }
 
@@ -220,19 +241,22 @@ main .hero .photo img{
 main .about{
   display: flex;
   gap: 20px;
-  margin-top: 100px;
-  padding: 0px 30px;
+  padding: 100px 30px 0 30px;
 }
 main .about .photo{
   height: 400px;
   width: 50%;
   border-radius: 10px;
   overflow: hidden;
+  z-index: -1;
 }
 main .about .photo img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -1;
+  /* filter: grayscale(70%); */
+  transform: scaleX(-1);
 }
 main .about .content{
   width: 50%;
@@ -240,6 +264,7 @@ main .about .content{
 main .about .content h3{
   background: var(--light-blue);
   border: 2px solid var(--lighter-blue);
+  box-shadow: 0px 0px 30px rgb(29, 15, 90);
   width: fit-content;
   padding: 5px 30px;
   border-radius: 10px;
@@ -273,17 +298,20 @@ main .about .content a:hover{
 
 /* SERVICES */
 main .services{
-  margin-top: 100px;
-  padding: 0px 30px;
+  padding: 100px 30px 0 30px;
 }
 main .services h3,
-main .tools h3{
+main .tools h3,
+main .projects h3{
   background: var(--light-blue);
   border: 2px solid var(--lighter-blue);
+  box-shadow: 0px 0px 30px rgb(29, 15, 90);
   padding: 7px 30px;
   width: fit-content;
   border-radius: 10px;
   margin: 20px auto;
+  text-align: center;
+  color: white;
 }
 main .services .cards{
   display: grid;
@@ -300,7 +328,7 @@ main .services .cards .card{
 }
 main .services .cards .card:hover{
   background: var(--light-blue);
-  scale: 1.02;
+  p{color: white;}
 }
 main .services .cards .card h4{
   margin: 20px 0;
@@ -314,8 +342,7 @@ main .services .cards .card p{
 
 /* TOOLS and TECH */
 main .tools{
-  margin-top: 100px;
-  padding: 0px 30px;
+  padding: 100px 30px 0 30px;
 }
 main .tools .cards{
   display: grid;
@@ -333,6 +360,7 @@ main .tools .cards .card{
 }
 main .tools .cards .card:hover{
   background: var(--light-blue);
+  h4{color: white;}
 }
 main .tools .cards .card i{
   font-size: 50px;
@@ -344,7 +372,53 @@ main .tools .cards .card h4{
 }
 
 
-
+/* PROJECTS */
+main .projects{
+  padding: 100px 30px 0 30px;
+}
+main .projects .cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 70px;
+  gap: 20px;
+}
+main .projects .cards .card{
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--dark-blue);
+  border-top: 2px solid var(--lighter-blue);
+  border-bottom: 2px solid var(--lighter-blue);
+  padding: 10px;
+  cursor: pointer;
+}
+main .projects .cards .card:hover{
+  background: var(--light-blue);
+}
+main .projects .cards .card img{
+  width: 100%;
+  border-radius: 10px;
+}
+main .projects .cards .card .content{
+  padding: 20px 10px;
+}
+main .projects .cards .card .content a{
+  padding: 5px 40px;
+  display: block;
+  margin-top: 20px;
+  background: var(--light-blue);
+  border: 2px solid var(--lighter-blue);
+  width: fit-content;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+main .projects .cards .card .content a:hover{
+  background: var(--dark-blue);
+}
+main .projects .cards .card .content p{
+  line-height: 1.5;
+  color: gray;
+}
 
 @media screen and (max-width:1000px) {
   header .cta-btn{
@@ -412,6 +486,11 @@ main .tools .cards .card h4{
   main .tools .cards{
     grid-template-columns: repeat(3, 1fr);
   }
+
+
+  main .projects .cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width:768px) {
@@ -434,7 +513,8 @@ main .tools .cards .card h4{
   main .hero .photo{
     margin-top: 50px;
   }
-  main .hero .photo img{
+  main .hero .photo img,
+  main .about .photo img{
     width: 100%;
     height: 300px;
   }
@@ -445,6 +525,7 @@ main .tools .cards .card h4{
   }
   main .about .photo{
     width: 100%;
+    height: 300px;
   }
   main .about .content{
     width: 100%;
@@ -458,6 +539,11 @@ main .tools .cards .card h4{
   /* TOOLS */
   main .tools .cards{
     grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  main .projects .cards{
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
