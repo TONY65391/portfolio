@@ -235,7 +235,7 @@
             </div>
         </div>
 
-        <div class="reviews">
+        <div class="reviews" id="testimonials">
             <h3>Testimonials📈</h3>
             <div class="cards">
                 <div class="card">
@@ -311,7 +311,111 @@
                 </div>
             </div>
         </div>
+
+        <div class="contact" id="contact">
+            <h3 class="desc">Contact Me📱</h3>
+            <div class="wrap">
+                <div class="faq">
+                    <h3>FAQ's❔</h3>
+
+                    <div class="question">
+                        <h4 class="header">What services do you offer?</h4>
+                        <div class="content">
+                            <p>I provide end-to-end web development services including website design, frontend development, backend development, e-commerce solutions, API integration, performance optimization, and website maintenance.</p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h4 class="header">How long does it take to build a website?</h4>
+                        <div class="content">
+                            <p>Project timelines depend on the complexity and number of pages.</p>
+                            <ul>
+                                <li>Simple websites: 3–7 days</li>
+                                <li>Business websites: 1–2 weeks</li>
+                                <li>Custom or complex platforms: 3–6 weeks</li>
+                            </ul>
+                            <p>I’ll give you a clear timeline after discussing your project requirements.</p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h4 class="header">How much do you charge?</h4>
+                        <div class="content">
+                            <p>Pricing varies based on the type of website, features, and design complexity. After we discuss your project, I provide a transparent quote tailored to your needs — no hidden fees.</p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h4 class="header">Will my website be mobile-responsive?</h4>
+                        <div class="content">
+                            <p>Absolutely. Every website I build is fully responsive and works smoothly on phones, tablets, and desktops.</p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h4 class="header">Do you handle website hosting and domain registration?</h4>
+                        <div class="content">
+                            <p>If you need help choosing or setting up hosting/domain providers, I can assist. You maintain full ownership — I only help configure everything correctly.</p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h4 class="header">Can you redesign my existing website?</h4>
+                        <div class="content">
+                            <p>Yes! I can modernize your existing site, improve performance, fix issues, update UI/UX, and make it look and work better.</p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h4 class="header">Can you integrate APIs or external services?</h4>
+                        <div class="content">
+                            <p>Yes, I can integrate payment systems, authentication, maps, email services, databases, and other third-party APIs depending on your needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form">
+                    <h3>Get in touch🖐</h3>
+                    <form action="">
+                        <div class="names">
+                            <div>
+                                <label for="business"><i class="fa-solid fa-user"></i></label>
+                                <input type="text" placeholder="Business name" name="business" id="business">
+                            </div>
+
+                            <div>
+                                <label for="name"><i class="fa-solid  fa-user"></i></label>
+                                <input type="text" placeholder="John Doe" id="name" name="name">
+                            </div>
+
+                            <div>
+                                <label for="email"><i class="fa-solid  fa-envelope"></i></label>
+                                <input type="email" id="email" placeholder="johndoe@example.com" name="email">
+                            </div>
+
+                            <div>
+                                <label for="telephone"><i class="fa-solid fa-phone"></i></label>
+                                <input type="tel" id="telephone" placeholder="0123-456-7890" pattern="0123-456-7890" name="telephone">
+                            </div>
+                        </div>
+
+                        <div>
+                            <textarea name="message" id="message" placeholder="Send us a message today" cols="50" rows="15"></textarea>
+                        </div>
+
+                        <button type="button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="map">
+            <h3>Find Me🔍</h3>
+            <input type="text" placeholder="Search city..." id="search" name="search">
+            <div id="map"></div>
+        </div>
     </main>
 </body>
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js"></script>
 <script src="../static/app.js" defer></script>
 </html>

@@ -41,6 +41,7 @@ button{font-size: 16px;}
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgb(29, 15, 90);
+  z-index: 10;
 }
 .top:hover{
   box-shadow: 0px 0px 30px rgb(29, 15, 90);
@@ -63,6 +64,7 @@ header{
   top: 0;
   width: min(100%, 1500px);
   margin: auto;
+  z-index: 10;
 }
 header .logo{
   font-size: 20px;
@@ -234,7 +236,6 @@ main .hero .photo img{
   margin: auto;
   border-radius: 10px;
   z-index: -1;
-  /* filter: grayscale(70%); */
   transform: scaleX(-1);
   box-shadow: 0px 0px 30px rgb(29, 15, 90);
 }
@@ -307,7 +308,9 @@ main .services{
 main .services h3,
 main .tools h3,
 main .projects h3,
-main .reviews h3{
+main .reviews h3,
+main .contact .desc,
+main .map h3{
   background: var(--light-blue);
   border-top: 2px solid var(--lighter-blue);
   border-left: 2px solid var(--lighter-blue);
@@ -447,7 +450,7 @@ main .reviews .cards{
   }
 }
 main .reviews .cards .card{
-  width: min(500px, 90%);
+  width: min(450px, 98%);
   border-top: 2px solid var(--light-blue);
   border-left: 2px solid var(--light-blue);
   padding: 30px;
@@ -463,6 +466,7 @@ main .reviews .cards .card:hover{
 main .reviews .cards .card i{
   position: absolute;
   font-size: clamp(2rem, 5vw, 3rem);
+  font-size: 60px;
   transform: scaleX(-1);
   bottom: 0;
   right: 0;
@@ -492,7 +496,149 @@ main .reviews .cards .card .details img{
   border-radius: 50%;
   object-fit: cover;
 }
-/* main .reviews .cards .card .client . */
+
+
+/* CONTACT */
+main .contact{
+  padding: 100px 30px 0px 30px;
+}
+main .contact .wrap{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 50px;
+  gap: 20px;
+}
+main .contact .wrap .faq h3,
+main .contact .wrap .form h3{
+  border-top: 2px solid var(--light-blue);
+  border-left: 2px solid var(--light-blue);
+  width: fit-content;
+  margin: auto;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+main .contact .wrap .faq .question{
+  margin-top: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid var(--light-blue);
+}
+main .contact .wrap .faq .question .header{
+  padding: 20px;
+  cursor: pointer;
+  font-variant: small-caps;
+  text-transform: capitalize;
+}
+main .contact .wrap .faq .question .header:hover{
+  background: var(--light-blue);
+}
+main .contact .wrap .faq .question .content{
+  line-height: 1.5;
+  max-height: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+main .contact .wrap .faq .question .content p,
+main .contact .wrap .faq .question .content ul li{
+  color: gray;
+}
+main .contact .wrap .faq .question .content ul{
+  margin-left: 20px;
+}
+main .contact .wrap .faq .question .content.open{
+  max-height: 2000px;
+  padding: 20px;
+  border-top: 2px solid var(--light-blue);
+}
+
+
+main .contact .wrap form{
+  margin-top: 20px;
+}
+main .contact .wrap .form textarea{
+  width: 100%;
+  resize: none;
+  background: none;
+  margin-top: 30px;
+  border-radius: 20px;
+  border: none;
+  border-top: 2px solid var(--light-blue);
+  border-left: 2px solid var(--light-blue);
+  border-bottom: 2px solid var(--light-blue);
+  padding: 30px;
+  color: gray;
+  outline: none;
+}
+main .contact .wrap .form .names{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+main .contact .wrap .form .names div{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid var(--light-blue);
+  border-left: 2px solid var(--light-blue);
+  border-radius: 20px;
+  overflow: hidden;
+}
+main .contact .wrap .form .names div i{
+  padding: 15px 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .contact .wrap .form .names div input{
+  border: none;
+  outline: none;
+  background: none;
+  color: gray;
+  height: 100%;
+  width: 85%;
+  padding: 0px 20px;
+}
+main .contact .wrap .form button{
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: none;
+  color: white;
+  border-top: 2px solid var(--light-blue);
+  border-left: 2px solid var(--light-blue);
+  cursor: pointer;
+}
+main .contact .wrap .form button:hover{
+  background: var(--light-blue);
+}
+
+/* MAP */
+#map{
+  width: 100%;
+  height: 450px;
+}
+main .map{
+  padding: 100px 0px 0px 0px;
+}
+main .map input{
+  background: none;
+  border: none;
+  padding: 20px;
+  color: gray;
+  display: block;
+  width: 99%;
+  margin: auto;
+  border-top: 2px solid var(--light-blue);
+  border-left: 2px solid var(--light-blue);
+  border-radius: 20px;
+}
+
 
 
 @media screen and (max-width:1000px) {
@@ -620,9 +766,17 @@ main .reviews .cards .card .details img{
     grid-template-columns: repeat(2, 1fr);
   }
 
-
+  /* PROJECTS */
   main .projects .cards{
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* CONTACT */
+  main .contact .wrap{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  main .contact .wrap .form{
+    margin-top: 100px;
   }
 }
 
