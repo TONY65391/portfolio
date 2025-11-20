@@ -76,10 +76,12 @@ header ul{
   align-items: center;
   gap: 20px;
 }
-header ul li{
+header ul li,
+.footer a{
   position: relative;
 }
-header ul li::after{
+header ul li::after,
+.footer a::after{
   content: "";
   position: absolute;
   width: 0%;
@@ -91,7 +93,8 @@ header ul li::after{
   background: white;
   transition: width 0.3s ease;
 }
-header ul li:hover::after{
+header ul li:hover::after,
+.footer a:hover::after{
   width: 60%;
 }
 header ul li a{
@@ -306,11 +309,12 @@ main .services{
   padding: 100px 30px 0 30px;
 }
 main .services h3,
-main .tools h3,
+main .tools_tech h3,
 main .projects h3,
 main .reviews h3,
 main .contact .desc,
-main .map h3{
+main .map h3,
+.footer #head{
   background: var(--light-blue);
   border-top: 2px solid var(--lighter-blue);
   border-left: 2px solid var(--lighter-blue);
@@ -351,16 +355,16 @@ main .services .cards .card p{
 
 
 /* TOOLS and TECH */
-main .tools{
+main .tools_tech{
   padding: 100px 30px 0 30px;
 }
-main .tools .cards{
+main .tools_tech .cards{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 50px;
   gap: 10px;
 }
-main .tools .cards .card{
+main .tools_tech .cards .card{
   background: var(--dark-blue);
   border-top: 2px solid var(--lighter-blue);
   border-left: 2px solid var(--lighter-blue);
@@ -369,17 +373,30 @@ main .tools .cards .card{
   padding: 30px 0px;
   cursor: pointer;
 }
-main .tools .cards .card:hover{
+main .tools_tech .cards .card:hover{
   background: var(--light-blue);
   h4{color: white;}
 }
-main .tools .cards .card i{
+main .tools_tech .cards .card i{
   font-size: 50px;
   margin: 20px 0;
 }
-main .tools .cards .card h4{
+main .tools_tech .cards .card img{
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+}
+main .tools_tech .cards .card h4{
   color: var(--lighter-blue);
   color: gray;
+}
+main .tools{
+  margin-top: 120px;
+}
+main .tools .cards .card{
+  border: none;
+  border-top: 2px solid var(--lighter-blue);
+  border-right: 2px solid var(--lighter-blue);
 }
 
 
@@ -634,9 +651,78 @@ main .map input{
   display: block;
   width: 99%;
   margin: auto;
+  margin-bottom: 20px;
   border-top: 2px solid var(--light-blue);
   border-left: 2px solid var(--light-blue);
+  border-right: 2px solid var(--light-blue);
   border-radius: 20px;
+}
+
+/* Footer Styles */
+.footer {
+  background: rgb(0, 0, 19);
+  box-shadow: 0px 0px 10px var(--lighter-blue);
+  color: #eaeaea;
+  padding: 60px 0 20px;
+  margin-top: 100px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.footer .container {
+  width: 90%;
+  max-width: 1100px;
+  line-height: 1.5;
+  text-align: left;
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer h2,
+.footer h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-about {
+  flex: 1 1 300px;
+}
+
+.footer-links,
+.footer-contact {
+  flex: 1 1 200px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 8px 0;
+}
+
+.footer a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--lighter-blue);
+  margin-top: 40px;
+  font-size: 14px;
+  color: #aaa;
 }
 
 
@@ -704,7 +790,7 @@ main .map input{
   main .services .cards{
     grid-template-columns: repeat(2, 1fr);
   }
-  main .tools .cards{
+  main .tools_tech .cards{
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -762,7 +848,7 @@ main .map input{
   }
 
   /* TOOLS */
-  main .tools .cards{
+  main .tools_tech .cards{
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -777,6 +863,10 @@ main .map input{
   }
   main .contact .wrap .form{
     margin-top: 100px;
+  }
+
+  .footer .container{
+    text-align: center;
   }
 }
 

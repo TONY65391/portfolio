@@ -50,3 +50,10 @@ const popup = new mapboxgl.Popup({ offset: 25 })
   .setText('Hello from Mapbox!');
 
 marker.setPopup(popup);
+
+
+
+
+async function openPDF() {
+  await window.open("./static/images/tondev_resume.pdf", "_blank");
+}

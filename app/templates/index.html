@@ -17,7 +17,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#tools">Tools</a></li>
+            <li><a href="#tools&tech">Tools & Tech</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -34,6 +34,10 @@
 
     <div class="top">⬆</div>
 
+    <div id="resume">
+        <img src="" alt="">
+    </div>
+
     <main>
         <div id="home" class="hero">
             <div class="content">
@@ -41,7 +45,7 @@
                 <h1>I Build <span>Fast</span>, <span>Modern</span> & High-Converting Websites</h1>
                 <p>From idea to launch—get a sleek, responsive, SEO-optimized website built to grow your business and make your brand stand out online.</p>
                 <div class="cta">
-                    <a id="resume">View Resume</a>
+                    <a class="resume" onclick="openPDF()">View Resume</a>
                     <a href="#projects">See My Work</a>
                 </div>
             </div>
@@ -118,61 +122,118 @@
             </div>
         </div>
 
-        <div id="tools" class="tools">
-            <h3>My Tools and Techs ⚒</h3>
-            <div class="cards">
+        <div class="tools_tech" id="tools&tech">
+            <div class="tech">
+                <h3>Languages🗣</h3>
+                <div class="cards">
 
-                <div class="card">
-                    <i class="fa-brands fa-html5"></i>
-                    <h4>HTML</h4>
+                    <div class="card">
+                        <i class="fa-brands fa-html5"></i>
+                        <h4>HTML</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-css3"></i>
+                        <h4>CSS</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-node-js"></i>
+                        <h4>JavaScript</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-react"></i>
+                        <h4>React.js</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-angular"></i>
+                        <h4>Angular.js</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-node"></i>
+                        <h4>Node.js</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-bootstrap"></i>
+                        <h4>BootStrap</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-solid fa-database"></i>
+                        <h4>Postgresql</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-python"></i>
+                        <h4>Python</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-php"></i>
+                        <h4>PHP</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-laravel"></i>
+                        <h4>Laravel</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-java"></i>
+                        <h4>Java</h4>
+                    </div>
+
                 </div>
+            </div>
 
-                <div class="card">
-                    <i class="fa-brands fa-css3"></i>
-                    <h4>CSS</h4>
+            <div class="tools">
+                <h3>Tools⚙</h3>
+                <div class="cards">
+
+                    <div class="card">
+                        <img src="../static/images/vs-code.png" alt="">
+                        <h4>Vs Code</h4>
+                    </div>
+
+                    <div class="card">
+                        <img src="../static/images/vercel.png" alt="">
+                        <h4>Vercel</h4>
+                    </div>
+
+                    <div class="card">
+                        <img src="../static/images/framer.png" alt="">
+                        <h4>Framer</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-solid fa-figma"></i>
+                        <h4>Figma</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-gitlab"></i>
+                        <h4>GitLab</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-github"></i>
+                        <h4>GitHub</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-git-alt"></i>
+                        <h4>GitBash</h4>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-brands fa-bitbucket"></i>
+                        <h4>BitBucket</h4>
+                    </div>
                 </div>
-
-                <div class="card">
-                    <i class="fa-brands fa-js"></i>
-                    <h4>JavaScript</h4>
-                </div>
-
-                <div class="card">
-                    <i class="fa-brands fa-react"></i>
-                    <h4>React.js</h4>
-                </div>
-
-                <div class="card">
-                    <i class="fa-brands fa-angular"></i>
-                    <h4>Angular.js</h4>
-                </div>
-
-                <div class="card">
-                    <i class="fa-brands fa-node"></i>
-                    <h4>Node.js</h4>
-                </div>
-
-                <div class="card">
-                    <i class="fa-brands fa-bootstrap"></i>
-                    <h4>BootStrap</h4>
-                </div>
-
-                <div class="card">
-                    <i class="fa-solid fa-database"></i>
-                    <h4>Postgresql</h4>
-                </div>
-
-                <div class="card">
-                    <i class="fa-brands fa-python"></i>
-                    <h4>Python</h4>
-                </div>
-
-                <div class="card">
-                    <i class="fa-brands fa-php"></i>
-                    <h4>PHP</h4>
-                </div>
-
-                
             </div>
         </div>
 
@@ -415,6 +476,42 @@
             <div id="map"></div>
         </div>
     </main>
+
+    <footer class="footer">
+        <h3 id="head">Ready to start a project?</h3>
+        <p>What are you waiting for?! ... Reach out👋</p>
+        <div class="container">
+            <div class="footer-about">
+                <h3>TonDev</h4>
+                <p>Helping businesses and brands elevate their online presence with clean, modern, and scalable digital solutions.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#tools&tech">Tools&Tech</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#" class="resume" onclick="openPDF()">Resume</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:umofiainemesit65391@gmail.com">umofiainemesit65391@gmail.com</a></p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:09025468909">09025468909</a></p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:09038776537">09038776537</a></p>
+                <p>Remote / Worldwide</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 <b><i>Umofia Anthony Inemesit | TonDev</i></b>. All rights reserved.
+        </div>
+    </footer>
 </body>
 <script src="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js"></script>
 <script src="../static/app.js" defer></script>
