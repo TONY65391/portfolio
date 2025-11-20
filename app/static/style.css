@@ -598,6 +598,8 @@ main .contact .wrap .form .names div{
   justify-content: space-between;
   border-top: 2px solid var(--light-blue);
   border-left: 2px solid var(--light-blue);
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
   border-radius: 20px;
   overflow: hidden;
 }
@@ -617,7 +619,11 @@ main .contact .wrap .form .names div input{
   width: 85%;
   padding: 0px 20px;
 }
-main .contact .wrap .form button{
+main .contact .wrap .form .names div:hover,
+main .contact .wrap form textarea:hover{
+  border: 2px solid white;
+}
+main .contact .wrap .form a{
   border: none;
   outline: none;
   width: 100%;
@@ -630,8 +636,10 @@ main .contact .wrap .form button{
   border-top: 2px solid var(--light-blue);
   border-left: 2px solid var(--light-blue);
   cursor: pointer;
+  text-decoration: none;
+  display: block;
 }
-main .contact .wrap .form button:hover{
+main .contact .wrap .form a:hover{
   background: var(--light-blue);
 }
 

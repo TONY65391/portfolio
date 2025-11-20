@@ -36,7 +36,8 @@ headers.map((header, index) => {
 
 
 const TOKEN = 'pk.eyJ1IjoidG9uZGV2NCIsImEiOiJjbWh6MjM5eXkwYTJ4MmtzaHEyMXhtZnYwIn0.u--2EgXvYhrkcy1Q7r_BAg';
-let initialCenter = [-74.5, 40];
+const initialCenter = [6.5244, 3.3792];
+
 mapboxgl.accessToken = TOKEN;
 const map = new mapboxgl.Map({
     center : initialCenter,
@@ -45,15 +46,43 @@ const map = new mapboxgl.Map({
     zoom : 9
 });
 
-let marker = mapboxgl.Marker().setLngLat(initialCenter).addTo(map);
+let marker = new mapboxgl.Marker().setLngLat(initialCenter).addTo(map);
 const popup = new mapboxgl.Popup({ offset: 25 })
   .setText('Hello from Mapbox!');
 
 marker.setPopup(popup);
 
-
-
-
 async function openPDF() {
   await window.open("./static/images/tondev_resume.pdf", "_blank");
+};
+
+
+const business = document.getElementById('business');
+const clientName = document.getElementById('name');
+const email = document.getElementById('email');
+const telephone = document.getElementById('telephone');
+const textArea = document.getElementById('message')
+const allInputs = Array(business, clientName, email, telephone, textArea);
+const sendBtn = document.getElementById('getMessage');
+
+
+sendBtn.onclick = () => {
+    var error = 0;
+    allInputs.forEach(input => {
+        const inputValue = input.value.toUpperCase();
+        if (inputValue.trim() === '' || inputValue.length === 0){error++; return};
+        error > 0 ? window.alert('Cannot send empty messages') : sendMessage(); 
+    })
+}
+const sendMessage = () => {
+    const messageDiv = document.createElement('div');
+    allInputs.forEach(input => {
+        const inputValue = input.value;
+        // if (inputValue.trim() == '' || inputValue.length == 0) return;
+
+        const specificInput = input.getAttribute('id').toUpperCase();
+        messageDiv.innerHTML += `
+        <p>${specificInput}: ${inputValue}</p><br>`;
+    });
+    window.location.href = `mailto:umofiainemesit65391@gmail.com?subject=Client Message&body=${messageDiv.innerText}`;
 }
