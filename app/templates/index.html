@@ -8,6 +8,8 @@
 
     <link rel="shortcut icon" href="../static/images/Umofia-Anthony-Inemesit.jpg" type="image/x-icon">
 
+    <link href="https://unpkg.com/mapbox-gl@2.15.0/dist/mapbox-gl.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="../static/style.css">
     <title>TonDev - Website Developer</title>
 </head>
@@ -478,8 +480,12 @@
         </div>
 
         <div class="map">
-            <h3>Find Me🔍</h3>
-            <input type="text" placeholder="Search city..." id="search" name="search">
+            <h3>Search Places🔍</h3>
+            <div class="searchCont">
+                <input type="text" placeholder="Search city..." id="search" title="Search Input" name="search">
+                <button type="button" title="Click to search"><i class="fa-solid fa-search" id="sendBtn"></i></button>
+            </div>
+            <div id="resultDiv"></div>
             <div id="map"></div>
         </div>
     </main>
@@ -520,6 +526,7 @@
         </div>
     </footer>
 </body>
-<script src="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js"></script>
+<!-- <script src="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js"></script> -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/3.11.0/mapbox-gl.js"></script>
 <script src="../static/app.js" defer></script>
 </html>

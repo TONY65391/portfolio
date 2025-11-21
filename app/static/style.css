@@ -651,20 +651,52 @@ main .contact .wrap .form a:hover{
 main .map{
   padding: 100px 0px 0px 0px;
 }
-main .map input{
-  background: none;
-  border: none;
-  padding: 20px;
-  color: gray;
-  display: block;
-  width: 99%;
-  margin: auto;
-  margin-bottom: 20px;
+main .map .searchCont{
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1.7fr 0.3fr;
+  border-radius: 20px;
+  overflow: hidden;
   border-top: 2px solid var(--light-blue);
   border-left: 2px solid var(--light-blue);
   border-right: 2px solid var(--light-blue);
+}
+main .map .searchCont input{
+  background: none;
+  border: 2px solid transparent;
+  outline: none;
+  padding: 20px;
+  color: gray;
+  display: block;
+  height: 100%;
+  margin-bottom: 20px;
   border-radius: 20px;
 }
+main .map .searchCont input:focus,
+main .map .searchCont button:hover{
+  border: 2px solid white;
+}
+main .map .searchCont button{
+  border: 2px solid var(--light-blue);
+  color: white;
+  border-radius: 20px;
+  background: none;
+  cursor: pointer;
+}
+main .map #resultDiv{
+  width: 98%;
+  margin: 20px auto;
+}
+main .map #resultDiv p{
+  padding: 10px;
+  border: 1px solid var(--light-blue);
+  cursor: pointer;
+  border-radius: 5px;
+}
+main .map #resultDiv p:hover{
+  padding-left: 20px;
+}
+
 
 /* Footer Styles */
 .footer {
@@ -871,6 +903,17 @@ main .map input{
   }
   main .contact .wrap .form{
     margin-top: 100px;
+  }
+
+  /* MAP */
+  main .map .searchCont{
+    grid-template-columns: 1.5fr 0.5fr;
+    border: none;
+  }
+  main .map .searchCont input,
+  main .map .searchCont button{
+    height: 50%;
+    border: 2px solid var(--light-blue);
   }
 
   .footer .container{
