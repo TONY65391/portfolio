@@ -307,6 +307,19 @@ main .about .content a:hover{
 /* SERVICES */
 main .services{
   padding: 100px 30px 0 30px;
+  position: relative;
+}
+main .services::after{
+  content: "SERVICES";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: transparent;
+  text-shadow: 0px 0px 20px gray;
+  z-index: -1;
+  font-size: 100px;
+  transform: translate(-50%, -50%);
+  letter-spacing: 5vw;
 }
 main .services h3,
 main .tools_tech h3,
@@ -390,8 +403,36 @@ main .tools_tech .cards .card h4{
   color: var(--lighter-blue);
   color: gray;
 }
+main .tech{
+  position: relative;
+}
+main .tech::after{
+  content: "TECH";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: transparent;
+  text-shadow: 0px 0px 20px gray;
+  z-index: -1;
+  font-size: 100px;
+  transform: translate(-50%, -50%);
+  letter-spacing: 5vw;
+}
 main .tools{
   margin-top: 120px;
+  position: relative;
+}
+main .tools::after{
+  content: "TOOLS";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: transparent;
+  text-shadow: 0px 0px 20px gray;
+  z-index: -1;
+  font-size: 100px;
+  transform: translate(-50%, -50%);
+  letter-spacing: 5vw;
 }
 main .tools .cards .card{
   border: none;
@@ -403,6 +444,19 @@ main .tools .cards .card{
 /* PROJECTS */
 main .projects{
   padding: 100px 30px 0 30px;
+  position: relative;
+}
+main .projects::after{
+  content: "PROJECTS";
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  color: transparent;
+  text-shadow: 0px 0px 20px gray;
+  z-index: -1;
+  font-size: 100px;
+  transform: translateY(-50%);
+  letter-spacing: 5vw;
 }
 main .projects .cards{
   display: grid;
@@ -454,6 +508,19 @@ main .projects .cards .card .content p{
 main .reviews{
   padding-top: 100px;
   padding: 100px 30px 0px 30px;
+  position: relative;
+}
+main .reviews::after{
+  content: "REVIEWS";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: transparent;
+  text-shadow: 0px 0px 20px gray;
+  z-index: -1;
+  font-size: 100px;
+  transform: translate(-50%, -50%);
+  letter-spacing: 5vw;
 }
 main .reviews .cards{
   display: flex;
@@ -571,6 +638,19 @@ main .contact .wrap .faq .question .content.open{
 
 main .contact .wrap form{
   margin-top: 20px;
+  position: relative;
+}
+main .contact .wrap form::after{
+  content: "FORM";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: transparent;
+  text-shadow: 0px 0px 20px gray;
+  z-index: -1;
+  font-size: 100px;
+  transform: translate(-50%, -50%);
+  letter-spacing: 5vw;
 }
 main .contact .wrap .form textarea{
   width: 100%;
@@ -696,6 +776,7 @@ main .map #resultDiv p{
 main .map #resultDiv p:hover{
   padding-left: 20px;
 }
+
 
 
 /* Footer Styles */
