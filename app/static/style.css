@@ -17,6 +17,7 @@ body{
   background: rgb(9, 9, 37);
   color: white;
   width: min(100%, 1500px);
+  max-width: 100%;
   margin: auto;
   overflow-x: hidden;
 }
@@ -63,6 +64,8 @@ header{
   position: fixed;
   top: 0;
   width: min(100%, 1500px);
+  max-width: 100%;
+  overflow: hidden;
   margin: auto;
   z-index: 10;
 }
@@ -308,6 +311,8 @@ main .about .content a:hover{
 main .services{
   padding: 100px 30px 0 30px;
   position: relative;
+  overflow: hidden;
+  max-width: 100%;
 }
 main .services::after{
   content: "SERVICES";
@@ -405,6 +410,8 @@ main .tools_tech .cards .card h4{
 }
 main .tech{
   position: relative;
+  overflow: hidden;
+  max-width: 100%;
 }
 main .tech::after{
   content: "TECH";
@@ -421,6 +428,8 @@ main .tech::after{
 main .tools{
   margin-top: 120px;
   position: relative;
+  overflow: hidden;
+  max-width: 100%;
 }
 main .tools::after{
   content: "TOOLS";
@@ -445,17 +454,19 @@ main .tools .cards .card{
 main .projects{
   padding: 100px 30px 0 30px;
   position: relative;
+  overflow: hidden;
+  max-width: 100%;
 }
 main .projects::after{
   content: "PROJECTS";
   position: absolute;
   top: 50%;
-  left: 20%;
+  left: 50%;
   color: transparent;
   text-shadow: 0px 0px 20px gray;
   z-index: -1;
   font-size: 100px;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   letter-spacing: 5vw;
 }
 main .projects .cards{
@@ -509,6 +520,8 @@ main .reviews{
   padding-top: 100px;
   padding: 100px 30px 0px 30px;
   position: relative;
+  overflow: hidden;
+  max-width: 100%;
 }
 main .reviews::after{
   content: "REVIEWS";
@@ -639,6 +652,8 @@ main .contact .wrap .faq .question .content.open{
 main .contact .wrap form{
   margin-top: 20px;
   position: relative;
+  overflow: hidden;
+  max-width: 100%;
 }
 main .contact .wrap form::after{
   content: "FORM";

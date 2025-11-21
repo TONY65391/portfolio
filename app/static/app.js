@@ -126,3 +126,16 @@ const sendMessage = () => {
 async function openPDF() {
   await window.open("./static/images/tondev_resume.pdf", "_blank");
 };
+
+
+// ANIMATIONS
+const home = document.getElementById('home');
+const about = document.getElementById('about');
+const services = document.getElementById('services');
+const tools_tech = document.getElementById('tools&tech');
+const projects = document.getElementById('projects');
+const reviews = document.getElementById('reviews');
+const contact = document.getElementById('contact');
+
+const sections = new Array(home, about, services, tools_tech, projects, reviews, contact);
+
