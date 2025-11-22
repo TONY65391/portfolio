@@ -52,6 +52,26 @@ button{font-size: 16px;}
   pointer-events: none;
 }
 
+/* Whatsapp */
+.whatsapp a{
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  font-size: 40px;
+  background: rgb(1, 139, 1);
+  box-shadow: 0px 0px 10px rgb(1, 139, 1);
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+  scale: 0.7;
+
+}
+.whatsapp:hover a{
+  scale: 1;
+}
+
 
 /* HEADING */
 header{
@@ -65,7 +85,6 @@ header{
   top: 0;
   width: min(100%, 1500px);
   max-width: 100%;
-  overflow: hidden;
   margin: auto;
   z-index: 10;
 }
@@ -187,6 +206,8 @@ main .hero .content h4{
   padding: 5px 30px;
   border-radius: 10px;
   text-align: center;
+  transform: translateY(30px);
+  opacity: 0;
 }
 main .hero .content h1{
   margin-top: 10px;
@@ -246,7 +267,34 @@ main .hero .photo img{
   box-shadow: 0px 0px 30px rgb(29, 15, 90);
 }
 
+/* HERO ANIMATIONS */
+main .hero *{transform: translateY(30px); opacity: 0; pointer-events: none;}
+main .hero.show *{animation: showElement 0.5s ease forwards;}
+main .hero.show .content h4{animation-delay: 0.2s;}
+main .hero.show .content h1{animation-delay: 0.4s;}
+main .hero.show .content p{animation-delay: 0.6s;}
+main .hero.show .content .cta{animation-delay: 0.8s;}
+main .hero.show .photo img{animation: showImage 0.5s ease forwards; animation-delay: 1s;}
 
+
+.show{
+  animation: showElement 0.5s ease forwards;
+}
+@keyframes showElement{
+  to{
+    transform: translateY(0px);
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+@keyframes showImage{
+  from{transform: translateX(30px); scale: 0;}
+  to{
+    scale: 1;
+    opacity: 1;
+    transform: translateY(0) scaleX(-1);
+  }
+}
 
 /* ABOUT */
 main .about{
@@ -306,6 +354,15 @@ main .about .content a:hover{
   background: var(--light-blue);
 }
 
+/* ABOUT ANIMATIONS */
+main .about *{transform: translateY(30px); opacity: 0; pointer-events: none;}
+main .about.show *{animation: showElement 0.5s ease forwards;}
+main .about.show img{animation: showImage 0.5s ease forwards; animation-delay: 0.2s;}
+main .about.show .content h3{animation-delay: 0.5s;}
+main .about.show .content p{animation-delay: 0.8s;}
+main .about.show .content li{animation-delay: 2.1s;}
+main .about.show .content a{animation-delay: 2.4s;}
+
 
 /* SERVICES */
 main .services{
@@ -320,11 +377,11 @@ main .services::after{
   top: 50%;
   left: 50%;
   color: transparent;
-  text-shadow: 0px 0px 20px gray;
+  text-shadow: 0px 0px 10px gray;
   z-index: -1;
   font-size: 100px;
   transform: translate(-50%, -50%);
-  letter-spacing: 5vw;
+  letter-spacing: 3vw;
 }
 main .services h3,
 main .tools_tech h3,
@@ -370,6 +427,21 @@ main .services .cards .card h4{
 main .services .cards .card p{
   color: gray;
 }
+
+/* SERVICES ANIMATIONS */
+main .services h3, main .services::after{transform: translateY(30px); opacity: 0;}
+main .services .cards .card {transform: translateX(30px); pointer-events: none; opacity: 0;}
+main .services.show *{animation: showElement 0.5s ease forwards;}
+main .services.show .cards .card:first-child{animation-delay: 0.2s;}
+main .services.show .cards .card:nth-child(2){animation-delay: 0.4s;}
+main .services.show .cards .card:nth-child(3){animation-delay: 0.6s;}
+main .services.show .cards .card:nth-child(4){animation-delay: 0.8s;}
+main .services.show .cards .card:nth-child(5){animation-delay: 1s;}
+main .services.show .cards .card:nth-child(6){animation-delay: 1.2s;}
+main .services.show .cards .card:nth-child(7){animation-delay: 1.4s;}
+main .services.show .cards .card:nth-child(8){animation-delay: 1.6s;}
+main .services.show .cards .card:last-child{animation-delay: 1.8s;}
+
 
 
 /* TOOLS and TECH */
@@ -419,11 +491,11 @@ main .tech::after{
   top: 50%;
   left: 50%;
   color: transparent;
-  text-shadow: 0px 0px 20px gray;
+  text-shadow: 0px 0px 10px gray;
   z-index: -1;
   font-size: 100px;
   transform: translate(-50%, -50%);
-  letter-spacing: 5vw;
+  letter-spacing: 3vw;
 }
 main .tools{
   margin-top: 120px;
@@ -437,17 +509,43 @@ main .tools::after{
   top: 50%;
   left: 50%;
   color: transparent;
-  text-shadow: 0px 0px 20px gray;
+  text-shadow: 0px 0px 10px gray;
   z-index: -1;
   font-size: 100px;
   transform: translate(-50%, -50%);
-  letter-spacing: 5vw;
+  letter-spacing: 3vw;
 }
 main .tools .cards .card{
   border: none;
   border-top: 2px solid var(--lighter-blue);
   border-right: 2px solid var(--lighter-blue);
 }
+
+/* TECH ANIMATIONS */
+main .tools_tech * {transform: translateY(30px); opacity: 0; pointer-events: none;}
+main .tools_tech .cards .card{transform: translate(-50px, 0); opacity: 0; pointer-events: none;}
+main .tools_tech.show *{animation: showElement 0.5s ease forwards;}
+main .tools_tech.show .cards .card:nth-child(1){animation-delay: 0.2s;}
+main .tools_tech.show .cards .card:nth-child(2){animation-delay: 0.3s;}
+main .tools_tech.show .cards .card:nth-child(3){animation-delay: 0.4s;}
+main .tools_tech.show .cards .card:nth-child(4){animation-delay: 0.5s;}
+main .tools_tech.show .cards .card:nth-child(5){animation-delay: 0.6s;}
+main .tools_tech.show .cards .card:nth-child(6){animation-delay: 0.7s;}
+main .tools_tech.show .cards .card:nth-child(7){animation-delay: 0.8s;}
+main .tools_tech.show .cards .card:nth-child(8){animation-delay: 0.9s;}
+main .tools_tech.show .cards .card:nth-child(9){animation-delay: 1s;}
+main .tools_tech.show .cards .card:nth-child(10){animation-delay: 1.1s;}
+main .tools_tech.show .cards .card:nth-child(11){animation-delay: 1.2s;}
+main .tools_tech.show .cards .card:nth-child(12){animation-delay: 1.3s;}
+main .tools_tech.show .tools .cards .card:nth-child(1){animation-delay: 1.3s;}
+main .tools_tech.show .tools .cards .card:nth-child(2){animation-delay: 1.4s;}
+main .tools_tech.show .tools .cards .card:nth-child(3){animation-delay: 1.5s;}
+main .tools_tech.show .tools .cards .card:nth-child(4){animation-delay: 1.6s;}
+main .tools_tech.show .tools .cards .card:nth-child(5){animation-delay: 1.7s;}
+main .tools_tech.show .tools .cards .card:nth-child(6){animation-delay: 1.8s;}
+main .tools_tech.show .tools .cards .card:nth-child(7){animation-delay: 1.9s;}
+main .tools_tech.show .tools .cards .card:nth-child(8){animation-delay: 2s;}
+
 
 
 /* PROJECTS */
@@ -463,11 +561,11 @@ main .projects::after{
   top: 50%;
   left: 50%;
   color: transparent;
-  text-shadow: 0px 0px 20px gray;
+  text-shadow: 0px 0px 10px gray;
   z-index: -1;
   font-size: 100px;
   transform: translate(-50%, -50%);
-  letter-spacing: 5vw;
+  letter-spacing: 3vw;
 }
 main .projects .cards{
   display: grid;
@@ -514,6 +612,19 @@ main .projects .cards .card .content p{
   margin-top: 10px;
 }
 
+/* PROJECTS ANIMATION */
+main .projects h3{transform: translateY(30px); opacity: 0;}
+main .projects .cards .card{transform: translateX(40px); opacity: 0; pointer-events: none;}
+main .projects.show *{animation: showElement 0.5s ease forwards;}
+main .projects h3{animation-delay: 0.2s;}
+main .projects.show .cards .card:nth-child(1){animation-delay: 0.4s;}
+main .projects.show .cards .card:nth-child(2){animation-delay: 0.6s;}
+main .projects.show .cards .card:nth-child(3){animation-delay: 0.8s;}
+main .projects.show .cards .card:nth-child(4){animation-delay: 2s;}
+main .projects.show .cards .card:nth-child(5){animation-delay: 2.2s;}
+main .projects.show .cards .card:nth-child(6){animation-delay: 2.4s;}
+main .projects.show .cards .card:nth-child(7){animation-delay: 2.6s;}
+
 
 /* REVIEWS */
 main .reviews{
@@ -529,11 +640,11 @@ main .reviews::after{
   top: 50%;
   left: 50%;
   color: transparent;
-  text-shadow: 0px 0px 20px gray;
+  text-shadow: 0px 0px 10px gray;
   z-index: -1;
   font-size: 100px;
   transform: translate(-50%, -50%);
-  letter-spacing: 5vw;
+  letter-spacing: 3vw;
 }
 main .reviews .cards{
   display: flex;
@@ -594,6 +705,15 @@ main .reviews .cards .card .details img{
   object-fit: cover;
 }
 
+/* REVIEWS ANIMATIONS */
+main .reviews h3{transform: translateY(30px); opacity: 0;}
+main .reviews .cards .card{transform: translateX(100px); opacity: 0; pointer-events: none;}
+main .reviews.show *{animation: showElement 0.5s ease forwards;}
+main .reviews.show .cards .card:nth-child(1){animation-delay: 0.4s;}
+main .reviews.show .cards .card:nth-child(2){animation-delay: 0.6s;}
+main .reviews.show .cards .card:nth-child(3){animation-delay: 0.8s;}
+main .reviews.show .cards .card:nth-child(4){animation-delay: 1s;}
+
 
 /* CONTACT */
 main .contact{
@@ -601,9 +721,9 @@ main .contact{
 }
 main .contact .wrap{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   margin-top: 50px;
-  gap: 20px;
+  gap: 70px;
 }
 main .contact .wrap .faq h3,
 main .contact .wrap .form h3{
@@ -613,6 +733,23 @@ main .contact .wrap .form h3{
   margin: auto;
   padding: 10px 20px;
   border-radius: 10px;
+}
+main .contact .wrap .faq,
+main .contact .wrap .form{
+  margin: auto;
+  width: min(1000px, 100%);
+  position: relative;
+}
+main .contact .wrap .faq::after{
+  content: "FAQ's";
+  color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-shadow: 0px 0px 10px gray;
+  transform: translate(-50%, -50%);
+  font-size: 150px;
+  letter-spacing: 3vw;
 }
 main .contact .wrap .faq .question{
   margin-top: 20px;
@@ -652,7 +789,6 @@ main .contact .wrap .faq .question .content.open{
 main .contact .wrap form{
   margin-top: 20px;
   position: relative;
-  overflow: hidden;
   max-width: 100%;
 }
 main .contact .wrap form::after{
@@ -661,11 +797,11 @@ main .contact .wrap form::after{
   top: 50%;
   left: 50%;
   color: transparent;
-  text-shadow: 0px 0px 20px gray;
+  text-shadow: 0px 0px 10px gray;
   z-index: -1;
   font-size: 100px;
   transform: translate(-50%, -50%);
-  letter-spacing: 5vw;
+  letter-spacing: 3vw;
 }
 main .contact .wrap .form textarea{
   width: 100%;
@@ -728,8 +864,10 @@ main .contact .wrap .form a{
   border-radius: 20px;
   background: none;
   color: white;
-  border-top: 2px solid var(--light-blue);
-  border-left: 2px solid var(--light-blue);
+  border: 2px solid var(--light-blue);
+  box-shadow: 0px 0px 10px var(--lighter-blue);
+  /* border-top: 2px solid var(--light-blue);
+  border-left: 2px solid var(--light-blue); */
   cursor: pointer;
   text-decoration: none;
   display: block;
@@ -794,13 +932,17 @@ main .map #resultDiv p:hover{
 
 
 
+
+
+
+
 /* Footer Styles */
 .footer {
   background: rgb(0, 0, 19);
   box-shadow: 0px 0px 10px var(--lighter-blue);
   color: #eaeaea;
   padding: 60px 0 20px;
-  margin-top: 100px;
+  margin-top: 0px;
   font-family: Arial, sans-serif;
   text-align: center;
 }

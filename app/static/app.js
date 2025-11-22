@@ -39,8 +39,6 @@ const TOKEN = 'pk.eyJ1IjoidG9uZGV2NCIsImEiOiJjbWh6MjM5eXkwYTJ4MmtzaHEyMXhtZnYwIn
 mapboxgl.accessToken = TOKEN;
 
 // Lagos coordinates
-const lagosCoordinates = [3.3792, 6.5244];
-
 const lagos = [3.3792, 6.5244];
 
 const map = new mapboxgl.Map({
@@ -56,8 +54,18 @@ map.addControl(new mapboxgl.NavigationControl());
 let marker = new mapboxgl.Marker({color:'green'}).setLngLat(lagos).addTo(map);
 
 const search = document.getElementById('search');
-const searchBtn = document.getElementById('sendBtn');
+const searchBtn = document.getElementById('searchBtn');
 const resultDiv = document.getElementById('resultDiv');
+
+
+searchBtn.addEventListener('click', () => {
+    const searchValue = search.value.trim();
+    if (searchValue === '' || searchValue.length === 0) return;
+    resultDiv.innerHTML = `<p>Searching 🔍...</p>`
+    setTimeout(() => {
+        searchPlace(searchValue);
+    }, 1000);
+})
 search.addEventListener('keydown', (e) => {
     const searchValue = search.value.trim();
     if (searchValue === '' || searchValue.length === 0) return;
@@ -104,13 +112,14 @@ const allInputs = Array(business, clientName, email, telephone, textArea);
 const sendBtn = document.getElementById('getMessage');
 
 sendBtn.onclick = () => {
-    var error = 0;
     allInputs.forEach(input => {
         const inputValue = input.value.toUpperCase();
-        if (inputValue.trim() === '' || inputValue.length === 0){error++; return};
-        error > 0 ? window.alert('Cannot send empty messages') : sendMessage(); 
-    })
-}
+        if (inputValue.trim() === '' || inputValue.length === 0) return;
+        sendMessage();
+    });
+};
+
+
 const sendMessage = () => {
     const messageDiv = document.createElement('div');
     allInputs.forEach(input => {
@@ -134,8 +143,14 @@ const about = document.getElementById('about');
 const services = document.getElementById('services');
 const tools_tech = document.getElementById('tools&tech');
 const projects = document.getElementById('projects');
-const reviews = document.getElementById('reviews');
+const reviews = document.getElementById('testimonials');
 const contact = document.getElementById('contact');
 
 const sections = new Array(home, about, services, tools_tech, projects, reviews, contact);
 
+window.addEventListener('scroll', () => {
+    sections.forEach(section => {
+        const sectionRect = section.getBoundingClientRect();
+        sectionRect.top < 150 ? section.classList.add('show') : null;
+    })
+})
