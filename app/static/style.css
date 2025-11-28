@@ -371,18 +371,6 @@ main .services{
   overflow: hidden;
   max-width: 100%;
 }
-main .services::after{
-  content: "SERVICES";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  color: transparent;
-  text-shadow: 0px 0px 10px gray;
-  z-index: -1;
-  font-size: 100px;
-  transform: translate(-50%, -50%);
-  letter-spacing: 3vw;
-}
 main .services h3,
 main .tools_tech h3,
 main .projects h3,
@@ -555,18 +543,6 @@ main .projects{
   overflow: hidden;
   max-width: 100%;
 }
-main .projects::after{
-  content: "PROJECTS";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  color: transparent;
-  text-shadow: 0px 0px 10px gray;
-  z-index: -1;
-  font-size: 100px;
-  transform: translate(-50%, -50%);
-  letter-spacing: 3vw;
-}
 main .projects .cards{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -633,18 +609,6 @@ main .reviews{
   position: relative;
   overflow: hidden;
   max-width: 100%;
-}
-main .reviews::after{
-  content: "REVIEWS";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  color: transparent;
-  text-shadow: 0px 0px 10px gray;
-  z-index: -1;
-  font-size: 100px;
-  transform: translate(-50%, -50%);
-  letter-spacing: 3vw;
 }
 main .reviews .cards{
   display: flex;
@@ -738,18 +702,8 @@ main .contact .wrap .faq,
 main .contact .wrap .form{
   margin: auto;
   width: min(1000px, 100%);
+  overflow: hidden;
   position: relative;
-}
-main .contact .wrap .faq::after{
-  content: "FAQ's";
-  color: transparent;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  text-shadow: 0px 0px 10px gray;
-  transform: translate(-50%, -50%);
-  font-size: 150px;
-  letter-spacing: 3vw;
 }
 main .contact .wrap .faq .question{
   margin-top: 20px;
@@ -865,9 +819,6 @@ main .contact .wrap .form a{
   background: none;
   color: white;
   border: 2px solid var(--light-blue);
-  box-shadow: 0px 0px 10px var(--lighter-blue);
-  /* border-top: 2px solid var(--light-blue);
-  border-left: 2px solid var(--light-blue); */
   cursor: pointer;
   text-decoration: none;
   display: block;
