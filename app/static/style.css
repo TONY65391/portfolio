@@ -357,11 +357,13 @@ main .about .content a:hover{
 /* ABOUT ANIMATIONS */
 main .about *{transform: translateY(30px); opacity: 0; pointer-events: none;}
 main .about.show *{animation: showElement 0.5s ease forwards;}
-main .about.show img{animation: showImage 0.5s ease forwards; animation-delay: 0.2s;}
+main .about.show img{animation: showImage 0.5s ease forwards; animation-delay: 1.5s;}
 main .about.show .content h3{animation-delay: 0.5s;}
 main .about.show .content p{animation-delay: 0.8s;}
-main .about.show .content li{animation-delay: 2.1s;}
-main .about.show .content a{animation-delay: 2.4s;}
+main .about.show .content li:first-child{animation-delay: 2.1s;}
+main .about.show .content li:nth-child(2){animation-delay: 2.3s;}
+main .about.show .content li:last-child{animation-delay: 2.5s;}
+main .about.show .content a{animation-delay: 2.7s;}
 
 
 /* SERVICES */
@@ -826,6 +828,30 @@ main .contact .wrap .form a{
 main .contact .wrap .form a:hover{
   background: var(--light-blue);
 }
+
+/* CONTACT ANIMATIONS */
+main .contact *{transform: translateY(20px); opacity: 0;}
+main .contact.show *{animation: showElement 0.5s ease forwards;}
+main .contact.show .desc{animation-delay: 0.2s;}
+main .contact.show .faq h3{animation-delay: 0.4s;}
+main .contact.show .faq .question:first-child{animation-delay: 0.6s;}
+main .contact.show .faq .question:nth-child(2){animation-delay: 0.8s;}
+main .contact.show .faq .question:nth-child(3){animation-delay: 1s;}
+main .contact.show .faq .question:nth-child(4){animation-delay: 1.2s;}
+main .contact.show .faq .question:nth-child(5){animation-delay: 1.4s;}
+main .contact.show .faq .question:nth-child(6){animation-delay: 1.6s;}
+main .contact.show .faq .question:nth-child(7){animation-delay: 1.8s;}
+main .contact.show .faq .question:nth-child(8){animation-delay: 2s;}
+
+main .contact.show .form h3{animation-delay: 2.2s;}
+main .contact.show .form .names div:first-child{animation-delay: 2.4s;}
+main .contact.show .form .names div:nth-child(2){animation-delay: 2.6s;}
+main .contact.show .form .names div:nth-child(3){animation-delay: 2.8s;}
+main .contact.show .form .names div:nth-child(4){animation-delay: 3s;}
+main .contact.show .form .message{animation-delay: 3.2s;}
+main .contact.show .wrap .form a{animation-delay: 3.4s;}
+main .contact.show .wrap .form::after{animation-delay: 3.3s;}
+
 
 /* MAP */
 #map{
