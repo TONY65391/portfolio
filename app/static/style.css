@@ -1134,5 +1134,12 @@ main .map #resultDiv p:hover{
   .footer .container{
     text-align: center;
   }
+
+
+  /* ADJUST PADDING */
+  header, main .hero, main .about, main .services, main .tools_tech, main .projects, main .reviews, main .contact{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
