@@ -314,7 +314,6 @@ main .about .photo img{
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  transform: scaleX(-1);
 }
 main .about .content{
   width: 50%;
@@ -357,7 +356,7 @@ main .about .content a:hover{
 /* ABOUT ANIMATIONS */
 main .about *{transform: translateY(30px); opacity: 0; pointer-events: none;}
 main .about.show *{animation: showElement 0.5s ease forwards;}
-main .about.show img{animation: showImage 0.5s ease forwards; animation-delay: 1.5s;}
+/* main .about.show img{animation: showImage 0.5s ease forwards; animation-delay: 1.5s;} */
 main .about.show .content h3{animation-delay: 0.5s;}
 main .about.show .content p{animation-delay: 0.8s;}
 main .about.show .content li:first-child{animation-delay: 2.1s;}
@@ -1142,4 +1141,3 @@ main .map #resultDiv p:hover{
     padding-right: 15px;
   }
 }
-
